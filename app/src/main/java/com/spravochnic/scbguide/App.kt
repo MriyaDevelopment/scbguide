@@ -6,7 +6,7 @@ import dagger.android.support.DaggerApplication
 
 class App : DaggerApplication() {
 
-    private val applicationInjector = DaggerAppComponent.builder().application(this).build()
+    private val applicationInjector = DaggerAppComponent.builder().application(this).context(this).build()
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> =
         applicationInjector
 }

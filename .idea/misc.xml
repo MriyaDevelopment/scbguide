@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/arrow_with_circle.xml" value="0.1635" />
+        <entry key="app/src/main/res/drawable/background_bottom_sheet.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/background_search_field.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/background_test_competed.xml" value="0.1635" />
+        <entry key="app/src/main/res/drawable/dash_line.xml" value="0.4768026123046876" />
         <entry key="app/src/main/res/drawable/ic_lamp.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.1635" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/dialog_result.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_detail_lectory.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_detail_lecture.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_details_lecture.xml" value="0.46166394779771613" />
         <entry key="app/src/main/res/layout/fragment_details_test.xml" value="0.30717315673828127" />
         <entry key="app/src/main/res/layout/fragment_lecture.xml" value="0.4083640392915702" />

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import coil.load
 import com.spravochnic.scbguide.common.base.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
 

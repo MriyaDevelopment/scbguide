@@ -19,4 +19,6 @@
     <color name="black_171E33">#171E33</color>
     <color name="black_334155">#334155</color>
     <color name="black_030303">#030303</color>
+
+    <color name="statusBarColor">#0D6D6666</color>
 </resources>

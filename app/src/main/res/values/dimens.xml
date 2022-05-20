@@ -76,6 +76,16 @@
     <dimen name="detailLectureViewWatchFullMarginTop">10dp</dimen>
     <dimen name="detailLectureViewWatchFullMarginEnd">10dp</dimen>
     <dimen name="detailLectureViewWatchFullMarginBottom">10dp</dimen>
+    <dimen name="detailLectureImgMarginVertical">15dp</dimen>
+    <dimen name="detailLectureImgMarginTop">40dp</dimen>
+    <dimen name="detailLectureImgMarginBottom">20dp</dimen>
+    <dimen name="detailLectureNameMarginTop">11dp</dimen>
+    <dimen name="detailLectureNameMarginHorizontal">27dp</dimen>
+    <dimen name="detailLectureTitleDescriptionMarginHorizontal">25dp</dimen>
+    <dimen name="detailLectureTitleDescriptionMarginTop">16dp</dimen>
+    <dimen name="detailLectureDescriptionMarginTop">5dp</dimen>
+    <dimen name="detailLectureDescriptionMarginHorizontal">25dp</dimen>
+    <dimen name="detailLectureDividerWight">3dp</dimen>
 
     <!-- Detail Test-->
     <dimen name="detailTestCardImgCorner">12dp</dimen>

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_main_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/detailLectureFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -25,6 +25,10 @@
         android:id="@+id/testFragment"
         android:name="com.spravochnic.scbguide.ui.test.TestFragment"
         android:label="TestFragment" />
+    <fragment
+        android:id="@+id/detailLectureFragment"
+        android:name="com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureFragment"
+        android:label="DetailLectureFragment" />
 
 
 </navigation>

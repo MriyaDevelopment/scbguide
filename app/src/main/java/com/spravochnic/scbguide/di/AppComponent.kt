@@ -1,7 +1,9 @@
 package com.spravochnic.scbguide.di
 
 import android.app.Application
+import android.content.Context
 import com.spravochnic.scbguide.App
+import com.spravochnic.scbguide.di.modules.AppModule
 import com.spravochnic.scbguide.di.modules.CommonActivityModule
 import com.spravochnic.scbguide.di.modules.NetworkModule
 import dagger.BindsInstance
@@ -11,13 +13,13 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidInjectionModule::class, CommonActivityModule::class, NetworkModule::class])
+@Component(modules = [AndroidInjectionModule::class, CommonActivityModule::class, NetworkModule::class, AppModule::class])
 interface AppComponent: AndroidInjector<App> {
 
     @Component.Builder
     interface Builder {
-        @BindsInstance
-        fun application(application: App): Builder
+        fun application(@BindsInstance instance: App): Builder
+        fun context(@BindsInstance context: Context): Builder
         fun build(): AppComponent
     }
 

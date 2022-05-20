@@ -60,6 +60,14 @@
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
+    <style name="NormalBlack_283665_20TextStyle" parent="BaseBlack_283665_TextStyle">
+        <item name="lineHeight">24sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
     <style name="NormalBlack_171E33_12TextStyle" parent="BaseBlack_283665_TextStyle">
         <item name="lineHeight">18sp</item>
         <item name="fontWeight">400</item>
