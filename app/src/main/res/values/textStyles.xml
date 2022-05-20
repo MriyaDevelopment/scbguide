@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- BaseTextColor -->
+
+    <style name="BaseBlack_283665_TextStyle">
+        <item name="android:textColor">@color/black_283665</item>
+    </style>
+
+    <style name="BaseWhite_FFFFFF_TextStyle">
+        <item name="android:textColor">@color/white_FFFFFF</item>
+    </style>
+
+    <style name="BaseGrey_64748B_TextStyle">
+        <item name="android:textColor">@color/grey_64748B</item>
+    </style>
+
+    <style name="BaseBlue_6689E5_TextStyle">
+        <item name="android:textColor">@color/blue_6689E5</item>
+    </style>
+
+    <style name="BaseOrange_FD7050_TextStyle">
+        <item name="android:textColor">@color/orange_FD7050</item>
+    </style>
+
+    <style name="BaseGreen_2C8837_TextStyle">
+        <item name="android:textColor">@color/green_2C8837</item>
+    </style>
+
+    <style name="BaseBlack_171E33_TextStyle">
+        <item name="android:textColor">@color/black_171E33</item>
+    </style>
+
+    <style name="BaseBlack_334155_TextStyle">
+        <item name="android:textColor">@color/black_334155</item>
+    </style>
+
+    <style name="BaseBlack_35467D_TextStyle">
+        <item name="android:textColor">@color/black_35467D</item>
+    </style>
+
+    <style name="BaseBlack_030303_TextStyle">
+        <item name="android:textColor">@color/black_030303</item>
+    </style>
+
+    <!-- TextColor -->
+    <style name="NormalBlack_030303_12TextStyle" parent="BaseBlack_030303_TextStyle">
+        <item name="lineHeight">18sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalBlack_283665_16TextStyle" parent="BaseBlack_283665_TextStyle">
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">700</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="NormalBlack_171E33_12TextStyle" parent="BaseBlack_283665_TextStyle">
+        <item name="lineHeight">18sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="OrangeNormal_FD7050_14TextStyle" parent="BaseOrange_FD7050_TextStyle">
+        <item name="lineHeight">16sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="BoldBlue_6689E5_14TextStyle" parent="BaseBlue_6689E5_TextStyle">
+        <item name="lineHeight">21sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="NormalBlue_6689E5_14TextStyle" parent="BaseBlue_6689E5_TextStyle">
+        <item name="lineHeight">21sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="BoldWhite_FFFFFF_14TextStyle" parent="BaseWhite_FFFFFF_TextStyle">
+        <item name="lineHeight">21sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="NormalWhite_FFFFFF_14TextStyle" parent="BaseWhite_FFFFFF_TextStyle">
+        <item name="lineHeight">21sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="NormalWhite_FFFFFF_12TextStyle" parent="BaseWhite_FFFFFF_TextStyle">
+        <item name="lineHeight">19sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalBlack_283665_14TextStyle" parent="BaseBlack_283665_TextStyle">
+        <item name="lineHeight">25sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="NormalBlack_283665_15TextStyle" parent="BaseBlack_283665_TextStyle">
+        <item name="lineHeight">25sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="NormalGrey_64748B_12TextStyle" parent="BaseGrey_64748B_TextStyle">
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalGrey_64748B_13TextStyle" parent="BaseGrey_64748B_TextStyle">
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalGrey_64748B_14TextStyle" parent="BaseGrey_64748B_TextStyle">
+        <item name="lineHeight">21sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalBlack_334155_18TextStyle" parent="BaseBlack_334155_TextStyle">
+        <item name="lineHeight">22sp</item>
+        <item name="fontWeight">500</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="NormalBlack_35467D_20TextStyle" parent="BaseBlack_35467D_TextStyle">
+        <item name="lineHeight">28sp</item>
+        <item name="fontWeight">600</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="ToolbarTextAppearance">
+        <item name="android:textColor">@color/blue_6689E5</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="fontWeight">700</item>
+        <item name="fontStyle">normal</item>
+    </style>
+
+    <style name="TextOrangeAppearance">
+        <item name="android:textColor">@color/orange_FD7050</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="lineHeight">14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="fontWeight">600</item>
+        <item name="fontStyle">normal</item>
+    </style>
+
+</resources>

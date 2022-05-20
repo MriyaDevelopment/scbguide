@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardTest"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/testViewCardCorner"
+    app:cardElevation="@dimen/testViewCardElevator">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintViewTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/testViewImgMarginVertical"
+            android:layout_marginStart="@dimen/testViewImgMarginStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_beginner" />
+
+        <TextView
+            android:id="@+id/textLevel"
+            style="@style/NormalBlack_334155_18TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/testViewLevelMarginStart"
+            android:layout_marginEnd="@dimen/testViewLevelMarginEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgTest"
+            app:layout_constraintTop_toTopOf="@+id/imgTest"
+            tools:text="Легкий уровень" />
+
+        <TextView
+            android:id="@+id/textQuestions"
+            style="@style/NormalGrey_64748B_13TextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/textLevel"
+            app:layout_constraintStart_toStartOf="@+id/textLevel"
+            app:layout_constraintTop_toBottomOf="@+id/textLevel"
+            tools:text="30 вопросов" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewCompleteTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/testViewCompleteMarginEnd"
+            android:layout_marginBottom="@dimen/testViewCompleteMarginBottom"
+            android:orientation="horizontal"
+            app:cardBackgroundColor="@color/orange_FD7050"
+            app:cardCornerRadius="@dimen/testViewCompleteCardCorner"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/complete"
+                style="@style/NormalWhite_FFFFFF_12TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/testViewCompleteMarginHorizontal"
+                android:layout_marginVertical="@dimen/testViewCompleteMarginVertical"
+                tools:text="8/15" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
