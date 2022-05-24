@@ -3,6 +3,7 @@ package com.spravochnic.scbguide.utils
 import android.animation.Animator
 import android.animation.TimeInterpolator
 import android.animation.ValueAnimator
+import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
@@ -63,4 +64,16 @@ fun ViewPager2.setCurrentItem(
     animator.interpolator = interpolator
     animator.duration = duration
     animator.start()
+}
+
+fun View.visible() {
+    this.visibility = View.VISIBLE
+}
+
+fun View.invisible() {
+    this.visibility = View.INVISIBLE
+}
+
+fun View.gone() {
+    this.visibility = View.GONE
 }

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 @Module
 class NetworkModule {
     companion object {
-        const val baseUrl = "http://ovz2.j04713753.pqr7m.vps.myjino.ru/"
+        const val BASE_URL = "http://ovz1.sergei-pokhodai.mzlgn.vps.myjino.ru/"
         val moshi: Moshi = Moshi.Builder()
             .add(KotlinJsonAdapterFactory())
             .build()
@@ -40,7 +40,7 @@ class NetworkModule {
     internal fun provideRetrofitInterface(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
-        .baseUrl(baseUrl)
+        .baseUrl(BASE_URL)
         .client(okHttpClient)
         .build()
 

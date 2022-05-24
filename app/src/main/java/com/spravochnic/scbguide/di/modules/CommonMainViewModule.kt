@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.spravochnic.scbguide.di.ViewModelKey
 import com.spravochnic.scbguide.di.factory.AppViewModelFactory
+import com.spravochnic.scbguide.ui.common.DialogErrorViewModel
 import com.spravochnic.scbguide.ui.lecture.LectureViewModel
 import com.spravochnic.scbguide.ui.lecture.details.DetailsLectureViewModel
 import com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureViewModel
@@ -55,4 +56,9 @@ interface CommonMainViewModule {
     @IntoMap
     @ViewModelKey(DetailLectureViewModel::class)
     fun bindDetailLectureViewModel(viewModel: DetailLectureViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DialogErrorViewModel::class)
+    fun bindDialogErrorViewModel(viewModel: DialogErrorViewModel): ViewModel
 }

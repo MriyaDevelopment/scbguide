@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.android.support.DaggerDialogFragment
 import javax.inject.Inject
 
-class BaseDialogFragment: DaggerDialogFragment() {
+abstract class BaseDialogFragment: DaggerDialogFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory

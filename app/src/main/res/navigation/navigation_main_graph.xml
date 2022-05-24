@@ -2,18 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_main_graph"
-    app:startDestination="@id/detailLectureFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.spravochnic.scbguide.ui.main.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment">
         <action
             android:id="@+id/action_mainFragment_to_lectureFragment"
-            app:destination="@id/lectureFragment" />
+            app:destination="@id/lectureFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit" />
         <action
             android:id="@+id/action_mainFragment_to_testFragment"
-            app:destination="@id/testFragment" />
+            app:destination="@id/testFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit" />
+        <action
+            android:id="@+id/action_mainFragment_to_dialogErrorFragment"
+            app:destination="@id/dialogErrorFragment" />
     </fragment>
 
     <fragment
@@ -29,6 +40,16 @@
         android:id="@+id/detailLectureFragment"
         android:name="com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureFragment"
         android:label="DetailLectureFragment" />
+
+    <dialog
+        android:id="@+id/dialogErrorFragment"
+        android:name="com.spravochnic.scbguide.ui.common.DialogErrorFragment"
+        android:label="DialogErrorFragment">
+        <argument
+            android:name="errorMessage"
+            android:defaultValue=""
+            app:argType="string" />
+    </dialog>
 
 
 </navigation>

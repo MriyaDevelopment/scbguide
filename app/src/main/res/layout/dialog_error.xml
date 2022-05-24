@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dialogErrorViewModel"
+            type="com.spravochnic.scbguide.ui.common.DialogErrorViewModel" />
+
+        <import type="com.spravochnic.scbguide.ui.common.ErrorTransactionEvent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_sheet">
+
+        <TextView
+            android:id="@+id/textError"
+            style="@style/NormalBlack_35467D_20TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dialogErrorViewModel.errorMessage}"
+            android:layout_marginHorizontal="@dimen/buttonRepeatMarginHorizontal"
+            android:layout_marginTop="@dimen/buttonTextMarginTop"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ошибка" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/repeat"
+            style="@style/DefaultButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/buttonRepeatMarginHorizontal"
+            android:layout_marginTop="@dimen/buttonRepeatMarginTop"
+            android:onClick="@{() -> dialogErrorViewModel.onClickDialog(ErrorTransactionEvent.REPEAT)}"
+            android:text="@string/buttonErrorDialogRepeat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textError"
+            app:rippleColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel"
+            style="@style/OnlyTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/buttonCancelMarginTop"
+            android:layout_marginBottom="@dimen/buttonCancelMarginBottom"
+            android:onClick="@{() -> dialogErrorViewModel.onClickDialog(ErrorTransactionEvent.CANCEL)}"
+            android:text="@string/buttonErrorDialogCancel"
+            android:textAppearance="@style/TextOrangeAppearance"
+            android:textColor="@color/black_030303"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repeat"
+            app:rippleColor="@color/blue_6689E5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

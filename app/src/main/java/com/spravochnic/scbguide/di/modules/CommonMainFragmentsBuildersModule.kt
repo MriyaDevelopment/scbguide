@@ -1,5 +1,6 @@
 package com.spravochnic.scbguide.di.modules
 
+import com.spravochnic.scbguide.ui.common.DialogErrorFragment
 import com.spravochnic.scbguide.ui.lecture.LectureFragment
 import com.spravochnic.scbguide.ui.lecture.details.DetailsLectureFragment
 import com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureFragment
@@ -34,4 +35,7 @@ abstract class CommonMainFragmentsBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributeDetailLectureFragment(): DetailLectureFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeErrorDialogFragment(): DialogErrorFragment
 }

@@ -2,9 +2,14 @@ package com.spravochnic.scbguide.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 import com.spravochnic.scbguide.App
+import com.spravochnic.scbguide.R
 import javax.inject.Inject
 
 class ContextUtils @Inject constructor(

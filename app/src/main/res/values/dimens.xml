@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="buttonPaddingOnlyTextButton">9dp</dimen>
+    <dimen name="buttonRepeatMarginTop">30dp</dimen>
+    <dimen name="buttonRepeatMarginHorizontal">50dp</dimen>
+    <dimen name="buttonTextMarginTop">25dp</dimen>
+    <dimen name="buttonCancelMarginTop">18dp</dimen>
+    <dimen name="buttonCancelMarginBottom">15dp</dimen>
+    <dimen name="progressIndicatorSize">40dp</dimen>
+    <dimen name="progressTrackThickness">6dp</dimen>
 
     <!-- Main -->
     <dimen name="mainTitleMarginTop">30dp</dimen>

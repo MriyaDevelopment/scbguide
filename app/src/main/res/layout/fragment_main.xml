@@ -8,6 +8,10 @@
         <variable
             name="mainViewModel"
             type="com.spravochnic.scbguide.ui.main.MainViewModel" />
+
+        <import type="com.spravochnic.scbguide.ui.main.TransactionEvent" />
+
+        <import type="android.view.View"/>
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -20,255 +24,281 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
+            android:visibility="@{!mainViewModel.loading}"
             android:scrollbars="none">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint"
+            <FrameLayout
+                android:id="@+id/mainContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/title"
-                    style="@style/NormalBlack_283665_16TextStyle"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/mainTitleMarginHorizontal"
-                    android:layout_marginTop="@dimen/mainTitleMarginTop"
-                    android:text="@string/mainTitle"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/firstPathSubTitle"
-                    style="@style/BoldBlue_6689E5_14TextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/mainSubTitleMarginTop"
-                    android:drawablePadding="@dimen/mainFirstPathPaddingDrawable"
-                    android:gravity="center"
-                    android:text="@string/mainFirstPathSubTitle"
-                    app:drawableStartCompat="@drawable/ic_award"
-                    app:layout_constraintStart_toStartOf="@+id/title"
-                    app:layout_constraintTop_toBottomOf="@+id/title" />
-
-                <TextView
-                    android:id="@+id/secondPathSubTitle"
-                    style="@style/NormalBlue_6689E5_14TextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/mainSecondPathMarginStart"
-                    android:text="@string/mainSecondPathSubTitle"
-                    app:layout_constraintBottom_toBottomOf="@+id/firstPathSubTitle"
-                    app:layout_constraintStart_toEndOf="@+id/firstPathSubTitle"
-                    app:layout_constraintTop_toTopOf="@+id/firstPathSubTitle" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/bannerTips"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/mainTipsMarginHorizontal"
-                    android:layout_marginTop="@dimen/mainTipsMarginTop"
-                    app:cardBackgroundColor="@color/blue_6689E5"
-                    app:cardCornerRadius="@dimen/mainTipsCorner"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/secondPathSubTitle">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/bannerConstraint"
+                    <TextView
+                        android:id="@+id/title"
+                        style="@style/NormalBlack_283665_16TextStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/mainTitleMarginHorizontal"
+                        android:layout_marginTop="@dimen/mainTitleMarginTop"
+                        android:text="@string/mainTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <ImageView
-                            android:id="@+id/lamp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainTipsBannerLampMarginStart"
-                            android:layout_marginTop="8dp"
-                            android:src="@drawable/ic_lamp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
+                    <TextView
+                        android:id="@+id/firstPathSubTitle"
+                        style="@style/BoldBlue_6689E5_14TextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mainSubTitleMarginTop"
+                        android:drawablePadding="@dimen/mainFirstPathPaddingDrawable"
+                        android:gravity="center"
+                        android:text="@string/mainFirstPathSubTitle"
+                        app:drawableStartCompat="@drawable/ic_award"
+                        app:layout_constraintStart_toStartOf="@+id/title"
+                        app:layout_constraintTop_toBottomOf="@+id/title" />
 
-                        <TextView
-                            android:id="@+id/bannerTipsTitle"
-                            style="@style/BoldWhite_FFFFFF_14TextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainTipsBannerTitleMarginStart"
-                            android:drawablePadding="@dimen/mainTipsBannerTitleMarginStart"
-                            android:text="@string/mainBannerTipsTitle"
-                            app:layout_constraintBottom_toBottomOf="@+id/lamp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/lamp"
-                            app:layout_constraintTop_toTopOf="@+id/lamp" />
+                    <TextView
+                        android:id="@+id/secondPathSubTitle"
+                        style="@style/NormalBlue_6689E5_14TextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mainSecondPathMarginStart"
+                        android:text="@string/mainSecondPathSubTitle"
+                        app:layout_constraintBottom_toBottomOf="@+id/firstPathSubTitle"
+                        app:layout_constraintStart_toEndOf="@+id/firstPathSubTitle"
+                        app:layout_constraintTop_toTopOf="@+id/firstPathSubTitle" />
 
-                        <ImageView
-                            android:id="@+id/bannerTipsMan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/mainTipsBannerIconMarginEnd"
-                            android:src="@drawable/ic_first_man"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/bannerTipsTitle"
-                            tools:ignore="ContentDescription" />
-
-                        <TextView
-                            android:id="@+id/bannerTipsDescription"
-                            style="@style/NormalWhite_FFFFFF_12TextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="@dimen/mainTipsBannerDescriptionMarginTop"
-                            android:text="@string/mainBannerTipsDescription"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/bannerTipsMan"
-                            app:layout_constraintStart_toStartOf="@+id/lamp"
-                            app:layout_constraintTop_toBottomOf="@+id/lamp" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/lecture"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/mainLectureMarginHorizontal"
-                    android:layout_marginTop="@dimen/mainLectureMarginTop"
-                    android:onClick="@{() -> mainViewModel.onClickLecture()}"
-                    app:cardBackgroundColor="@color/white_FFFFFF"
-                    app:cardCornerRadius="@dimen/mainLectureCorner"
-                    app:cardElevation="@dimen/mainLectureElevation"
-                    app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintStart_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/bannerTips"
-                    app:rippleColor="@color/blue_6689E5">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLecture"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/bannerTips"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/mainTipsMarginHorizontal"
+                        android:layout_marginTop="@dimen/mainTipsMarginTop"
+                        app:cardBackgroundColor="@color/blue_6689E5"
+                        app:cardCornerRadius="@dimen/mainTipsCorner"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/secondPathSubTitle">
 
-                        <ImageView
-                            android:id="@+id/lectureCircle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/mainLectureCircleMarginVertical"
-                            android:layout_marginEnd="@dimen/mainLectureCircleMarginEnd"
-                            android:src="@drawable/arrow_with_circle"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/bannerConstraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/iconLecture"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainLectureIconMarginStart"
-                            android:src="@drawable/ic_lecture"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
+                            <ImageView
+                                android:id="@+id/lamp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainTipsBannerLampMarginStart"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/ic_lamp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
 
-                        <TextView
-                            android:id="@+id/lectureName"
-                            style="@style/NormalBlack_283665_15TextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainLectureNameMarginStart"
-                            android:text="@string/mainLecture"
-                            app:layout_constraintStart_toEndOf="@+id/iconLecture"
-                            app:layout_constraintTop_toTopOf="@+id/iconLecture" />
+                            <TextView
+                                android:id="@+id/bannerTipsTitle"
+                                style="@style/BoldWhite_FFFFFF_14TextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainTipsBannerTitleMarginStart"
+                                android:drawablePadding="@dimen/mainTipsBannerTitleMarginStart"
+                                android:text="@string/mainBannerTipsTitle"
+                                app:layout_constraintBottom_toBottomOf="@+id/lamp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/lamp"
+                                app:layout_constraintTop_toTopOf="@+id/lamp" />
 
-                        <TextView
-                            android:id="@+id/lectureThemes"
-                            style="@style/NormalGrey_64748B_13TextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mainThemes"
-                            app:layout_constraintEnd_toEndOf="@+id/lectureName"
-                            app:layout_constraintStart_toStartOf="@+id/lectureName"
-                            app:layout_constraintTop_toBottomOf="@+id/lectureName" />
+                            <ImageView
+                                android:id="@+id/bannerTipsMan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/mainTipsBannerIconMarginEnd"
+                                android:src="@drawable/ic_first_man"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/bannerTipsTitle"
+                                tools:ignore="ContentDescription" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/bannerTipsDescription"
+                                style="@style/NormalWhite_FFFFFF_12TextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="@dimen/mainTipsBannerDescriptionMarginTop"
+                                android:text="@string/mainBannerTipsDescription"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/bannerTipsMan"
+                                app:layout_constraintStart_toStartOf="@+id/lamp"
+                                app:layout_constraintTop_toBottomOf="@+id/lamp" />
 
-                </com.google.android.material.card.MaterialCardView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/test"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/mainTestMarginTop"
-                    android:onClick="@{() -> mainViewModel.onClickTest()}"
-                    app:cardBackgroundColor="@color/white_FFFFFF"
-                    app:cardCornerRadius="@dimen/mainTestCorner"
-                    app:cardElevation="@dimen/mainTestElevation"
-                    app:layout_constraintEnd_toEndOf="@+id/lecture"
-                    app:layout_constraintStart_toStartOf="@+id/lecture"
-                    app:layout_constraintTop_toBottomOf="@+id/lecture"
-                    app:rippleColor="@color/blue_6689E5">
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintTest"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/lecture"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/mainLectureMarginHorizontal"
+                        android:layout_marginTop="@dimen/mainLectureMarginTop"
+                        android:onClick="@{() -> mainViewModel.onClickTransaction(TransactionEvent.LECTURE)}"
+                        app:cardBackgroundColor="@color/white_FFFFFF"
+                        app:cardCornerRadius="@dimen/mainLectureCorner"
+                        app:cardElevation="@dimen/mainLectureElevation"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bannerTips"
+                        app:rippleColor="@color/blue_6689E5">
 
-                        <ImageView
-                            android:id="@+id/testCircle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="@dimen/mainTestCircleMarginVertical"
-                            android:layout_marginEnd="@dimen/mainTestCircleMarginEnd"
-                            android:src="@drawable/arrow_with_circle"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLecture"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <ImageView
-                            android:id="@+id/iconTest"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainTestIconMarginStart"
-                            android:src="@drawable/ic_test"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="ContentDescription" />
+                            <ImageView
+                                android:id="@+id/lectureCircle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="@dimen/mainLectureCircleMarginVertical"
+                                android:layout_marginEnd="@dimen/mainLectureCircleMarginEnd"
+                                android:src="@drawable/arrow_with_circle"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
 
-                        <TextView
-                            android:id="@+id/testName"
-                            style="@style/NormalBlack_283665_15TextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/mainTestNameMarginStart"
-                            android:text="@string/mainTest"
-                            app:layout_constraintStart_toEndOf="@+id/iconTest"
-                            app:layout_constraintTop_toTopOf="@+id/iconTest" />
+                            <ImageView
+                                android:id="@+id/iconLecture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainLectureIconMarginStart"
+                                android:src="@drawable/ic_lecture"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
 
-                        <TextView
-                            android:id="@+id/testThemes"
-                            style="@style/NormalGrey_64748B_13TextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mainThemes"
-                            app:layout_constraintEnd_toEndOf="@+id/testName"
-                            app:layout_constraintStart_toStartOf="@+id/testName"
-                            app:layout_constraintTop_toBottomOf="@+id/testName" />
+                            <TextView
+                                android:id="@+id/lectureName"
+                                style="@style/NormalBlack_283665_15TextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainLectureNameMarginStart"
+                                android:text="@string/mainLecture"
+                                app:layout_constraintStart_toEndOf="@+id/iconLecture"
+                                app:layout_constraintTop_toTopOf="@+id/iconLecture" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/lectureThemes"
+                                style="@style/NormalGrey_64748B_13TextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mainThemes"
+                                app:layout_constraintEnd_toEndOf="@+id/lectureName"
+                                app:layout_constraintStart_toStartOf="@+id/lectureName"
+                                app:layout_constraintTop_toBottomOf="@+id/lectureName" />
 
-                </com.google.android.material.card.MaterialCardView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/test"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mainTestMarginTop"
+                        android:onClick="@{() -> mainViewModel.onClickTransaction(TransactionEvent.TEST)}"
+                        app:cardBackgroundColor="@color/white_FFFFFF"
+                        app:cardCornerRadius="@dimen/mainTestCorner"
+                        app:cardElevation="@dimen/mainTestElevation"
+                        app:layout_constraintEnd_toEndOf="@+id/lecture"
+                        app:layout_constraintStart_toStartOf="@+id/lecture"
+                        app:layout_constraintTop_toBottomOf="@+id/lecture"
+                        app:rippleColor="@color/blue_6689E5">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintTest"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/testCircle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="@dimen/mainTestCircleMarginVertical"
+                                android:layout_marginEnd="@dimen/mainTestCircleMarginEnd"
+                                android:src="@drawable/arrow_with_circle"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageView
+                                android:id="@+id/iconTest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainTestIconMarginStart"
+                                android:src="@drawable/ic_test"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:id="@+id/testName"
+                                style="@style/NormalBlack_283665_15TextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/mainTestNameMarginStart"
+                                android:text="@string/mainTest"
+                                app:layout_constraintStart_toEndOf="@+id/iconTest"
+                                app:layout_constraintTop_toTopOf="@+id/iconTest" />
+
+                            <TextView
+                                android:id="@+id/testThemes"
+                                style="@style/NormalGrey_64748B_13TextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mainThemes"
+                                app:layout_constraintEnd_toEndOf="@+id/testName"
+                                app:layout_constraintStart_toStartOf="@+id/testName"
+                                app:layout_constraintTop_toBottomOf="@+id/testName" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/progressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{mainViewModel.loading}">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/blue_6689E5"
+                app:indicatorSize="@dimen/progressIndicatorSize"
+                app:trackThickness="@dimen/progressTrackThickness" />
+
+        </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
