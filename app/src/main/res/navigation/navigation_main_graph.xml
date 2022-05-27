@@ -30,7 +30,15 @@
     <fragment
         android:id="@+id/lectureFragment"
         android:name="com.spravochnic.scbguide.ui.lecture.LectureFragment"
-        android:label="LectureFragment" />
+        android:label="LectureFragment">
+        <action
+            android:id="@+id/action_lectureFragment_to_detailsLectureFragment"
+            app:destination="@id/detailsLectureFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit"/>
+    </fragment>
 
     <fragment
         android:id="@+id/testFragment"
@@ -50,6 +58,15 @@
             android:defaultValue=""
             app:argType="string" />
     </dialog>
+    <fragment
+        android:id="@+id/detailsLectureFragment"
+        android:name="com.spravochnic.scbguide.ui.lecture.details.DetailsLectureFragment"
+        android:label="DetailsLectureFragment" >
+
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
 
 
 </navigation>

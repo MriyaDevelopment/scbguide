@@ -1,5 +1,9 @@
 package com.spravochnic.scbguide.common.base
 
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +13,17 @@ import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
+import android.os.Build
+import android.util.Log
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.snackbar.Snackbar
-import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.databinding.ActivityMainBinding.inflate
-import com.spravochnic.scbguide.databinding.DialogErrorBinding
 import com.spravochnic.scbguide.ui.main.MainActivity
 import com.spravochnic.scbguide.utils.ContextUtils
 import dagger.android.support.DaggerFragment
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.newFixedThreadPoolContext
 import javax.inject.Inject
 
 abstract class BaseFragment : DaggerFragment() {
@@ -36,36 +42,7 @@ abstract class BaseFragment : DaggerFragment() {
         findNavController().navigate(navDirections)
     }
 
-
-//    fun showErrorDialog(
-//        errorMessage: String,
-//        actionOnRepeat: (() -> Unit)?,
-//        actionOnCancel: (() -> Unit)?
-//    ) {
-//        (activity as MainActivity).showErrorDialog(
-//            errorMessage = errorMessage,
-//            { actionOnRepeat?.invoke() },
-//            { actionOnCancel?.invoke() })
-//    }
-//    fun showErrorDialog(errorMessage: String, actionOnRepeat: (() -> Unit)?, actionOnCancel: (() -> Unit)?) {
-//        val bottomSheetDialog = context?.let { BottomSheetDialog(it, R.style.BottomSheetDialog) }
-//        val binding = DataBindingUtil.inflate<DialogErrorBinding>(
-//            layoutInflater,
-//            R.layout.dialog_error,
-//            null,
-//            true
-//        )
-//        binding.textError.text = errorMessage
-//        binding.repeat.setOnClickListener {
-//            actionOnRepeat?.invoke()
-//        }
-//        binding.cancel.setOnClickListener {
-//            actionOnCancel?.invoke()
-//        }
-//        bottomSheetDialog?.setOnCancelListener {
-//            actionOnCancel?.invoke()
-//        }
-//        bottomSheetDialog?.setContentView(binding.root)
-//        bottomSheetDialog?.show()
-//    }
+    fun popBackStackFragment() {
+        findNavController().popBackStack()
+    }
 }

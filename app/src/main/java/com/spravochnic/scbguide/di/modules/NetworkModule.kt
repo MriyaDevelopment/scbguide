@@ -12,15 +12,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 @Module
 class NetworkModule {
-    companion object {
-        const val BASE_URL = "http://ovz1.sergei-pokhodai.mzlgn.vps.myjino.ru/"
-        val moshi: Moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()
-    }
+
+    @Provides
+    @Singleton
+    fun provideBaseUrl(): String = "http://ovz1.sergei-pokhodai.mzlgn.vps.myjino.ru/"
 
     @Provides
     @Reusable
@@ -37,15 +36,26 @@ class NetworkModule {
 
     @Provides
     @Reusable
-    internal fun provideRetrofitInterface(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
-        .addCallAdapterFactory(CoroutineCallAdapterFactory())
-        .baseUrl(BASE_URL)
-        .client(okHttpClient)
-        .build()
+    internal fun provideRetrofitInterface(
+        okHttpClient: OkHttpClient,
+        moshi: Moshi,
+        baseUrl: String
+    ): Retrofit =
+        Retrofit.Builder()
+            .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .baseUrl(baseUrl)
+            .client(okHttpClient)
+            .build()
 
     @Provides
     @Reusable
     internal fun provideApiNetwork(retrofit: Retrofit): ApiNetwork =
         retrofit.create(ApiNetwork::class.java)
+
+
+    @Provides
+    @Singleton
+    internal fun provideMoshiBuilder(): Moshi =
+        Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 }

@@ -8,6 +8,8 @@
         <variable
             name="lectureViewModel"
             type="com.spravochnic.scbguide.ui.lecture.LectureViewModel" />
+
+        <import type="com.spravochnic.scbguide.ui.lecture.TransactionLectureEvent"/>
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -30,8 +32,12 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:orientation="vertical"
+                app:collapsedTitleTextColor="@color/blue_6689E5"
                 app:contentScrim="@color/main_background"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:expandedTitleTextAppearance="@style/ToolbarTextAppearance"
+                app:expandedTitleTextColor="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="@string/lectureToolbarTitle">
 
                 <ImageView
                     android:id="@+id/imageLecture"
@@ -49,6 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:elevation="0dp"
+                    app:onNavigationIconClick="@{() -> lectureViewModel.onClickTransaction(TransactionLectureEvent.NAVIGATION)}"
                     app:layout_collapseMode="pin"
                     app:navigationIcon="@drawable/ic_arrow_back" />
 
@@ -89,6 +96,7 @@
                         style="@style/NormalGrey_64748B_14TextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@={lectureViewModel.searchField}"
                         android:background="@drawable/background_search_field"
                         android:hint="@string/lectureSearchHint" />
 

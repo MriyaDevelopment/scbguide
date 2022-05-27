@@ -2,12 +2,13 @@
     <string name="app_name">scbguide</string>
     <string name="buttonErrorDialogRepeat">Повторить подключение</string>
     <string name="buttonErrorDialogCancel">Отменить</string>
+    <string name="buttonErrorLocalDate">Загрузить локальные данные</string>
     <string name="messageFailure">Произошла неизвестная ошибка, проверьте соединение с интернет</string>
 
     <!-- Main -->
     <string name="mainTitle">Добро пожаловать в справочник!</string>
     <string name="mainFirstPathSubTitle">+150</string>
-    <string name="mainSecondPathSubTitle">устройств</string>
+    <string name="mainSecondPathSubTitle">%s устройств</string>
     <string name="mainBannerTipsTitle">Совет по изучению устройств</string>
     <string name="mainBannerTipsDescription">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
     <string name="mainLecture">Лекторий</string>
@@ -16,6 +17,7 @@
 
     <!-- Lecture -->
     <string name="lectureSearchHint">Поиск</string>
+    <string name="lectureToolbarTitle">Лекторий</string>
 
     <!-- Details Lecture -->
     <string name="detailsLectureTitleDescription">Описание</string>

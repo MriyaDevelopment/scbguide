@@ -8,6 +8,8 @@
     <dimen name="buttonCancelMarginBottom">15dp</dimen>
     <dimen name="progressIndicatorSize">40dp</dimen>
     <dimen name="progressTrackThickness">6dp</dimen>
+    <dimen name="sideMargins">8dp</dimen>
+    <dimen name="elementsMargins">12dp</dimen>
 
     <!-- Main -->
     <dimen name="mainTitleMarginTop">30dp</dimen>
@@ -54,6 +56,10 @@
     <dimen name="lectureViewImgMarginVertical">19dp</dimen>
     <dimen name="lectureViewNameMarginStart">11dp</dimen>
     <dimen name="lectureViewNameMarginEnd">10dp</dimen>
+    <dimen name="lectureRecyclerViewMarginHorizontal">15dp</dimen>
+    <dimen name="lectureRecyclerViewMarginBottom">19dp</dimen>
+    <dimen name="lectureRecyclerViewElements">0dp</dimen>
+    <dimen name="lectureViewImageSize">51dp</dimen>
 
     <!-- Test -->
     <dimen name="testRecViewPaddingTop">25dp</dimen>

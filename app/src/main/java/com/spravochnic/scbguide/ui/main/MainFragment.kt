@@ -1,19 +1,23 @@
 package com.spravochnic.scbguide.ui.main
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.common.base.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
 import com.spravochnic.scbguide.ui.common.DialogErrorFragment
 import com.spravochnic.scbguide.ui.common.ErrorTransactionEvent
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlin.system.exitProcess
+
 
 class MainFragment : BaseFragment() {
 
@@ -31,6 +35,7 @@ class MainFragment : BaseFragment() {
         setStatusBarColor(StatusBarColor.DARK_YELLOW.color)
     }.root
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObservable()
@@ -40,17 +45,24 @@ class MainFragment : BaseFragment() {
         findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
             DialogErrorFragment.RESULT_ERROR_DIALOG
         )?.observe(viewLifecycleOwner) { result ->
-            if (result == ErrorTransactionEvent.REPEAT.name) {
-                viewModel.loadLectureData()
-            } else {
-                println(result)
+            when (result) {
+                ErrorTransactionEvent.REPEAT.name -> {
+                    viewModel.loadData()
+                }
+                ErrorTransactionEvent.LOCAL.name -> {
+                    viewModel.updateDate()
+                }
+                else -> {
+                    (activity as MainActivity).finish()
+                    exitProcess(0)
+                }
             }
         }
         lifecycleScope.launch {
             viewModel.mainUIState.collect { state ->
                 when (state) {
                     is MainState.Empty -> {
-                        viewModel.loadLectureData()
+                        viewModel.loadData()
                     }
                     is MainState.LoadingMainState -> {
                         viewModel.isLoading = true
@@ -59,20 +71,19 @@ class MainFragment : BaseFragment() {
                         viewModel.isLoading = false
                     }
                     is MainState.ErrorMainState -> {
-                        state.errorMessage?.let { message ->
-                            transitionFromFragmentToFragment(
-                                MainFragmentDirections.actionMainFragmentToDialogErrorFragment(
-                                    message
-                                )
-                            )
-                        }
+
                     }
                     is MainState.FailureMainState -> {
-                        transitionFromFragmentToFragment(
-                            MainFragmentDirections.actionMainFragmentToDialogErrorFragment(
-                                contextUtils.getString(R.string.messageFailure)
-                            )
-                        )
+                        showErrorDialog(contextUtils.getString(R.string.messageFailure))
+                    }
+                    is MainState.ErrorLectureMainState -> {
+                        showErrorDialog(state.errorMessage)
+                    }
+                    is MainState.ErrorCategoriesLectureMainState -> {
+                        showErrorDialog(state.errorMessage)
+                    }
+                    is MainState.ErrorTestMainState -> {
+                        showErrorDialog(state.errorMessage)
                     }
                 }
             }
@@ -81,13 +92,22 @@ class MainFragment : BaseFragment() {
             viewModel.transitionEvent.collect { event ->
                 when (event) {
                     TransactionEvent.LECTURE -> {
-                        transitionFromFragmentToFragment(MainFragmentDirections.actionMainFragmentToLectureFragment())
+                        findNavController().navigate(MainFragmentDirections.actionMainFragmentToLectureFragment())
+
                     }
                     TransactionEvent.TEST -> {
-                        transitionFromFragmentToFragment(MainFragmentDirections.actionMainFragmentToTestFragment())
+                        findNavController().navigate(MainFragmentDirections.actionMainFragmentToTestFragment())
                     }
                 }
             }
         }
+    }
+
+    private fun showErrorDialog(errorMessage: String) {
+        findNavController().navigate(
+            MainFragmentDirections.actionMainFragmentToDialogErrorFragment(
+                errorMessage
+            )
+        )
     }
 }

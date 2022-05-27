@@ -18,7 +18,7 @@ abstract class CommonMainFragmentsBuildersModule {
     @ContributesAndroidInjector
     abstract fun contributeMainFragment(): MainFragment
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector()
     abstract fun contributeLectureFragment(): LectureFragment
 
     @ContributesAndroidInjector

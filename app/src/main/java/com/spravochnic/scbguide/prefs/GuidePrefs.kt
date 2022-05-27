@@ -11,12 +11,13 @@ import javax.inject.Singleton
 class GuidePrefs @Inject constructor(context: Context) {
 
     companion object {
-        const val PREF_USER_TOKEN = "pref_user_token"
+        const val DATABASE_IS_FULL = "prefs_database_is_full"
     }
+
     private val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-    fun setUserToken(userToken: String) = prefs.edit { putString(PREF_USER_TOKEN, userToken) }
-    fun getUserToken() = prefs.getString(PREF_USER_TOKEN, null)
+    fun setDataBaseIsFull(isFull: Boolean) = prefs.edit { putBoolean(DATABASE_IS_FULL, isFull) }
+    fun getDataBaseIsFull() = prefs.getBoolean(DATABASE_IS_FULL, false)
     fun deleteUserToken() = prefs.edit {
-        remove(PREF_USER_TOKEN)
+        remove(DATABASE_IS_FULL)
     }
 }

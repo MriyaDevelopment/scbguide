@@ -1,19 +1,16 @@
 package com.spravochnic.scbguide.ui.main
 
-import android.graphics.Color
-import android.os.Build
+import android.annotation.SuppressLint
+import android.app.PendingIntent
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.databinding.ActivityMainBinding
-import com.spravochnic.scbguide.databinding.DialogErrorBinding
-import com.spravochnic.scbguide.utils.gone
-import com.spravochnic.scbguide.utils.visible
 import dagger.android.support.DaggerAppCompatActivity
 
 

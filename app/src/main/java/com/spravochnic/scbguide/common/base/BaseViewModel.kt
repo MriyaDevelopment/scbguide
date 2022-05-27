@@ -4,7 +4,12 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.PropertyChangeRegistry
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.spravochnic.scbguide.BR
+import com.spravochnic.scbguide.ui.main.TransactionEvent
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.launch
 
 abstract class BaseViewModel: ViewModel(), Observable {
 
@@ -17,7 +22,6 @@ abstract class BaseViewModel: ViewModel(), Observable {
             field = value
             notifyPropertyChanged(BR.loading)
         }
-
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback) {
         synchronized(this) {

@@ -1,15 +1,15 @@
 package com.spravochnic.scbguide.api.response
 
-data class CategoriesLectureResponse(
+data class LectureCategoriesResponse(
     val result: String?,
     val error: String?,
-    val categories: List<Categories>?
+    val lecture: List<Lecture>?
 ) {
-    data class Categories(
+    data class Lecture(
         val id: Int?,
         val name: String?,
+        val numbers: String?,
         val type: String?,
-        val image: String?,
-        val description: String?
+        val image: String
     )
 }
