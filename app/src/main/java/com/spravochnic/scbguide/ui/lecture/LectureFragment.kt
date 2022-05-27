@@ -73,10 +73,10 @@ class LectureFragment : BaseFragment() {
         }
     }
 
-    private val onClickItemLecture: (String) -> Unit = { type ->
+    private val onClickItemLecture: (String, String) -> Unit = { type, name ->
         transitionFromFragmentToFragment(
             LectureFragmentDirections.actionLectureFragmentToDetailsLectureFragment(
-                type
+                type = type, name = name
             )
         )
     }

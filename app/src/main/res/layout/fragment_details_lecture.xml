@@ -8,6 +8,8 @@
         <variable
             name="detailsLectureViewModel"
             type="com.spravochnic.scbguide.ui.lecture.details.DetailsLectureViewModel" />
+
+        <import type="com.spravochnic.scbguide.ui.lecture.details.TransactionDetailsLectureEvent" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -29,6 +31,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_arrow_back"
+                app:onNavigationIconClick="@{() -> detailsLectureViewModel.onClickTransaction(TransactionDetailsLectureEvent.NAVIGATION)}"
                 app:titleTextAppearance="@style/ToolbarTextAppearance"
                 app:titleTextColor="@color/blue_6689E5"
                 tools:title="Светофоры" />

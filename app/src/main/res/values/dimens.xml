@@ -99,6 +99,8 @@
     <dimen name="detailLectureDescriptionMarginTop">5dp</dimen>
     <dimen name="detailLectureDescriptionMarginHorizontal">25dp</dimen>
     <dimen name="detailLectureDividerWight">3dp</dimen>
+    <dimen name="detailLectureWatchFullCorner">15dp</dimen>
+    <dimen name="detailLectureWatchFullHeight">40dp</dimen>
 
     <!-- Detail Test-->
     <dimen name="detailTestCardImgCorner">12dp</dimen>

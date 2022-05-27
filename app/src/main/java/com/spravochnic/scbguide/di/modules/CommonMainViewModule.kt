@@ -8,6 +8,7 @@ import com.spravochnic.scbguide.ui.common.DialogErrorViewModel
 import com.spravochnic.scbguide.ui.lecture.LectureViewModel
 import com.spravochnic.scbguide.ui.lecture.details.DetailsLectureViewModel
 import com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureViewModel
+import com.spravochnic.scbguide.ui.lecture.details.photo_lecture.PhotoLectureViewModel
 import com.spravochnic.scbguide.ui.main.MainViewModel
 import com.spravochnic.scbguide.ui.result.ResultViewModel
 import com.spravochnic.scbguide.ui.test.TestViewModel
@@ -61,4 +62,9 @@ interface CommonMainViewModule {
     @IntoMap
     @ViewModelKey(DialogErrorViewModel::class)
     fun bindDialogErrorViewModel(viewModel: DialogErrorViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PhotoLectureViewModel::class)
+    fun bindPhotoLectureViewModel(viewModel: PhotoLectureViewModel): ViewModel
 }

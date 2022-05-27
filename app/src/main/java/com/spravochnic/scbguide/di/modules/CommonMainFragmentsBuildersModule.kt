@@ -4,6 +4,7 @@ import com.spravochnic.scbguide.ui.common.DialogErrorFragment
 import com.spravochnic.scbguide.ui.lecture.LectureFragment
 import com.spravochnic.scbguide.ui.lecture.details.DetailsLectureFragment
 import com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureFragment
+import com.spravochnic.scbguide.ui.lecture.details.photo_lecture.PhotoLectureFragment
 import com.spravochnic.scbguide.ui.main.MainFragment
 import com.spravochnic.scbguide.ui.result.ResultDialogFragment
 import com.spravochnic.scbguide.ui.test.TestFragment
@@ -38,4 +39,7 @@ abstract class CommonMainFragmentsBuildersModule {
 
     @ContributesAndroidInjector
     abstract fun contributeErrorDialogFragment(): DialogErrorFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributePhotoLectureFragment(): PhotoLectureFragment
 }

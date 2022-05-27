@@ -18,7 +18,7 @@ import javax.inject.Singleton
 
 class LectureAdapter(
     val contextUtils: ContextUtils,
-    private val onClickItemLecture: (String) -> Unit = {}
+    private val onClickItemLecture: (String, String) -> Unit = {type, name ->}
 ) :
     ListAdapter<LectureCategoriesEntity, LectureAdapter.LectureCategoryViewHolder>(
         LectureCategoriesDiffUtilCallback()
@@ -65,7 +65,7 @@ class LectureAdapter(
                         )
                     }
                 root.setOnClickListener {
-                    item.type?.let { type -> onClickItemLecture(type) }
+                    onClickItemLecture(item.type.toString(), item.name.toString())
                 }
             }
         }

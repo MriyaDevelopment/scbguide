@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/detailLectureViewMarginHorizontal"
+    app:rippleColor="@color/blue_6689E5"
     app:cardBackgroundColor="@color/blue_6689E5"
     app:cardCornerRadius="@dimen/detailLectureViewCorner"
     app:cardElevation="0dp">
@@ -36,13 +37,27 @@
             <ImageView
                 android:id="@+id/imgDevice"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_marginTop="@dimen/detailLectureViewImgMarginTop"
                 android:src="@drawable/test"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/imgProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/blue_6689E5"
+                app:indicatorSize="@dimen/progressIndicatorSize"
+                app:trackThickness="@dimen/progressTrackThickness"
+                app:layout_constraintBottom_toBottomOf="@+id/imgDevice"
+                app:layout_constraintEnd_toEndOf="@+id/imgDevice"
+                app:layout_constraintStart_toStartOf="@+id/imgDevice"
+                app:layout_constraintTop_toTopOf="@+id/imgDevice" />
 
             <TextView
                 android:id="@+id/titleDescription"
@@ -62,6 +77,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/detailLectureViewDescriptionMarginTop"
+                android:maxLines="6"
+                android:ellipsize="end"
+                android:singleLine="false"
                 app:layout_constraintEnd_toEndOf="@+id/titleDescription"
                 app:layout_constraintStart_toStartOf="@+id/titleDescription"
                 app:layout_constraintTop_toBottomOf="@+id/titleDescription"
@@ -71,11 +89,12 @@
                 android:id="@+id/watchFull"
                 style="@style/OnlyTextButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/detailLectureWatchFullHeight"
                 android:layout_marginTop="@dimen/detailLectureViewWatchFullMarginTop"
                 android:layout_marginEnd="@dimen/detailLectureViewWatchFullMarginEnd"
                 android:layout_marginBottom="@dimen/detailLectureViewWatchFullMarginBottom"
                 android:text="@string/detailsLectureWatchFull"
+                app:cornerRadius="@dimen/detailLectureWatchFullCorner"
                 android:textAppearance="@style/TextOrangeAppearance"
                 android:textColor="@color/orange_FD7050"
                 app:icon="@drawable/ic_orange_arrow"

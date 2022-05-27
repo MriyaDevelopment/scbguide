@@ -37,7 +37,7 @@
             app:enterAnim="@anim/fragment_enter"
             app:exitAnim="@anim/fragment_exit"
             app:popEnterAnim="@anim/fragment_enter"
-            app:popExitAnim="@anim/fragment_exit"/>
+            app:popExitAnim="@anim/fragment_exit" />
     </fragment>
 
     <fragment
@@ -47,7 +47,19 @@
     <fragment
         android:id="@+id/detailLectureFragment"
         android:name="com.spravochnic.scbguide.ui.lecture.details.detail.DetailLectureFragment"
-        android:label="DetailLectureFragment" />
+        android:label="DetailLectureFragment">
+
+        <argument
+            android:name="type"
+            app:argType="string" />
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailLectureFragment_to_photoLectureFragment"
+            app:destination="@id/photoLectureFragment" />
+    </fragment>
 
     <dialog
         android:id="@+id/dialogErrorFragment"
@@ -61,12 +73,30 @@
     <fragment
         android:id="@+id/detailsLectureFragment"
         android:name="com.spravochnic.scbguide.ui.lecture.details.DetailsLectureFragment"
-        android:label="DetailsLectureFragment" >
+        android:label="DetailsLectureFragment">
 
         <argument
             android:name="type"
             app:argType="string" />
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailsLectureFragment_to_detailLectureFragment"
+            app:destination="@id/detailLectureFragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter"
+            app:popExitAnim="@anim/fragment_exit" />
+        <action
+            android:id="@+id/action_detailsLectureFragment_to_photoLectureFragment"
+            app:destination="@id/photoLectureFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/photoLectureFragment"
+        android:name="com.spravochnic.scbguide.ui.lecture.details.photo_lecture.PhotoLectureFragment"
+        android:label="PhotoLectureFragment" />
 
 
 </navigation>

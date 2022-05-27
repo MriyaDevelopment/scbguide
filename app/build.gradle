@@ -112,6 +112,8 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
+    implementation "com.github.MikeOrtiz:TouchImageView:1.4.1"
+
     //noinspection GradleDependency
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$archComponents")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$archComponents")

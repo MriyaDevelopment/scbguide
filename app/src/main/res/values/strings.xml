@@ -8,7 +8,7 @@
     <!-- Main -->
     <string name="mainTitle">Добро пожаловать в справочник!</string>
     <string name="mainFirstPathSubTitle">+150</string>
-    <string name="mainSecondPathSubTitle">%s устройств</string>
+    <string name="mainSecondPathSubTitle">устройств</string>
     <string name="mainBannerTipsTitle">Совет по изучению устройств</string>
     <string name="mainBannerTipsDescription">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
     <string name="mainLecture">Лекторий</string>

@@ -77,30 +77,30 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/searchLectureInputLayout"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/lectureSearchMarginStart"
-                    android:layout_marginTop="@dimen/lectureSearchMarginTop"
-                    android:layout_marginEnd="@dimen/lectureSearchMarginEnd"
-                    app:endIconDrawable="@drawable/btn_search"
-                    app:endIconMode="custom"
-                    app:endIconTint="@android:color/transparent"
-                    app:endIconTintMode="screen"
-                    app:hintEnabled="false">
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/searchLectureInputLayout"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="@dimen/lectureSearchMarginStart"-->
+<!--                    android:layout_marginTop="@dimen/lectureSearchMarginTop"-->
+<!--                    android:layout_marginEnd="@dimen/lectureSearchMarginEnd"-->
+<!--                    app:endIconDrawable="@drawable/btn_search"-->
+<!--                    app:endIconMode="custom"-->
+<!--                    app:endIconTint="@android:color/transparent"-->
+<!--                    app:endIconTintMode="screen"-->
+<!--                    app:hintEnabled="false">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/searchField"
-                        style="@style/NormalGrey_64748B_14TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@={lectureViewModel.searchField}"
-                        android:background="@drawable/background_search_field"
-                        android:hint="@string/lectureSearchHint" />
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:id="@+id/searchField"-->
+<!--                        style="@style/NormalGrey_64748B_14TextStyle"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@={lectureViewModel.searchField}"-->
+<!--                        android:background="@drawable/background_search_field"-->
+<!--                        android:hint="@string/lectureSearchHint" />-->
 
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
