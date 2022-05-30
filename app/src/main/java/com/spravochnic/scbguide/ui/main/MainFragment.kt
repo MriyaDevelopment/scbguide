@@ -42,22 +42,6 @@ class MainFragment : BaseFragment() {
     }
 
     private fun setObservable() {
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
-            DialogErrorFragment.RESULT_ERROR_DIALOG
-        )?.observe(viewLifecycleOwner) { result ->
-            when (result) {
-                ErrorTransactionEvent.REPEAT.name -> {
-                    viewModel.loadData()
-                }
-                ErrorTransactionEvent.LOCAL.name -> {
-                    viewModel.updateDate()
-                }
-                else -> {
-                    (activity as MainActivity).finish()
-                    exitProcess(0)
-                }
-            }
-        }
         lifecycleScope.launch {
             viewModel.mainUIState.collect { state ->
                 when (state) {
@@ -71,19 +55,23 @@ class MainFragment : BaseFragment() {
                         viewModel.isLoading = false
                     }
                     is MainState.ErrorMainState -> {
-
+                        showSnackBar(binding.root, buttonText = "Загрузить") {
+                            viewModel.updateDate()
+                        }
                     }
                     is MainState.FailureMainState -> {
-                        showErrorDialog(contextUtils.getString(R.string.messageFailure))
+                        showSnackBar(binding.root, buttonText = "Загрузить") {
+                            viewModel.updateDate()
+                        }
                     }
                     is MainState.ErrorLectureMainState -> {
-                        showErrorDialog(state.errorMessage)
+                        updateLoadData(state.errorMessage)
                     }
                     is MainState.ErrorCategoriesLectureMainState -> {
-                        showErrorDialog(state.errorMessage)
+                        updateLoadData(state.errorMessage)
                     }
                     is MainState.ErrorTestMainState -> {
-                        showErrorDialog(state.errorMessage)
+                        updateLoadData(state.errorMessage)
                     }
                 }
             }
@@ -103,11 +91,11 @@ class MainFragment : BaseFragment() {
         }
     }
 
-    private fun showErrorDialog(errorMessage: String) {
-        findNavController().navigate(
-            MainFragmentDirections.actionMainFragmentToDialogErrorFragment(
-                errorMessage
-            )
-        )
+    private fun updateLoadData(
+        errorMessage: String
+    ) {
+        showSnackBar(binding.root, textSnackBar = errorMessage, buttonText = "Загрузить снова") {
+            viewModel.updateDate()
+        }
     }
 }

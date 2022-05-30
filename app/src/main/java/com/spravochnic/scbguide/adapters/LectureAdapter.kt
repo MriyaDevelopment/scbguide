@@ -18,7 +18,7 @@ import javax.inject.Singleton
 
 class LectureAdapter(
     val contextUtils: ContextUtils,
-    private val onClickItemLecture: (String, String) -> Unit = {type, name ->}
+    private val onClickItemLecture: (String, String) -> Unit = { type, name -> }
 ) :
     ListAdapter<LectureCategoriesEntity, LectureAdapter.LectureCategoryViewHolder>(
         LectureCategoriesDiffUtilCallback()
@@ -60,7 +60,7 @@ class LectureAdapter(
                 textDevices.text =
                     item.numbers?.let {
                         contextUtils.getString(
-                            R.string.mainSecondPathSubTitle,
+                            R.string.lectureViewDevice,
                             it
                         )
                     }

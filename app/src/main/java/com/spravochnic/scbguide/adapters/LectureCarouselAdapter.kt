@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.databinding.ViewDetailsLectureBinding
 import com.spravochnic.scbguide.databinding.ViewLectureBinding
 import com.spravochnic.scbguide.db.entity.LectureCategoriesEntity
@@ -50,6 +51,7 @@ class LectureCarouselAdapter(
                 description.text = item.description
                 imgDevice.transitionName = "transition_quick${item.id}"
                 imgDevice.load(image) {
+                    placeholder(R.drawable.img_placeholder)
                     listener(
                         onStart = {
                             imgDevice.animate().alpha(0f)
@@ -58,14 +60,14 @@ class LectureCarouselAdapter(
                         onSuccess = { _, _ ->
                             imgDevice.animate().alpha(1f)
                             imgProgress.gone()
+                            imgDevice.setOnClickListener {
+                                onClickImgDevice(image, imgDevice, item.name.toString())
+                            }
                         }
                     )
                 }
                 watchFull.setOnClickListener {
                     onClickWatchFull(item.type.toString(), item.name.toString())
-                }
-                imgDevice.setOnClickListener {
-                    onClickImgDevice(image, imgDevice, item.name.toString())
                 }
             }
         }

@@ -19,9 +19,6 @@ class LectureFragment : BaseFragment() {
     private val viewModel: LectureViewModel by viewModels { viewModelFactory }
     private lateinit var binding: FragmentLectureBinding
 
-    @Inject
-    lateinit var db: DataBase
-
     private val lectureAdapter by lazy {
         LectureAdapter(contextUtils, onClickItemLecture = onClickItemLecture)
     }

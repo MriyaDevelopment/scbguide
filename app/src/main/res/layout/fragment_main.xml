@@ -201,7 +201,7 @@
                                 style="@style/NormalGrey_64748B_13TextStyle"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/mainThemes"
+                                android:text="@string/mainLectureThemes"
                                 app:layout_constraintEnd_toEndOf="@+id/lectureName"
                                 app:layout_constraintStart_toStartOf="@+id/lectureName"
                                 app:layout_constraintTop_toBottomOf="@+id/lectureName" />
@@ -267,7 +267,7 @@
                                 style="@style/NormalGrey_64748B_13TextStyle"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/mainThemes"
+                                android:text="@string/mainTestThemes"
                                 app:layout_constraintEnd_toEndOf="@+id/testName"
                                 app:layout_constraintStart_toStartOf="@+id/testName"
                                 app:layout_constraintTop_toBottomOf="@+id/testName" />

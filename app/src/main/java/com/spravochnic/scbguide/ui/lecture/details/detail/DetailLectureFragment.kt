@@ -56,7 +56,9 @@ class DetailLectureFragment : BaseFragment() {
                         is DetailState.setDataDetail -> {
                             binding.run {
                                 val image = baseUrl + "instruments/imageLectory/" + state.data.image
-                                imgLecture.load(image)
+                                imgLecture.load(image) {
+                                    placeholder(R.drawable.img_placeholder)
+                                }
                                 imgLecture.transitionName = "transition_quick${state.data.id}"
                                 description.text = state.data.description
                                 name.text = state.data.name

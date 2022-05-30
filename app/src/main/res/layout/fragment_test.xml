@@ -8,6 +8,8 @@
         <variable
             name="testViewModel"
             type="com.spravochnic.scbguide.ui.test.TestViewModel" />
+
+        <import type="com.spravochnic.scbguide.ui.test.TransactionTestEvent" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -29,8 +31,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
+                app:collapsedTitleTextColor="@color/blue_6689E5"
                 android:orientation="vertical"
                 app:contentScrim="@color/main_background"
+                app:expandedTitleTextAppearance="@style/ToolbarTextAppearance"
+                app:expandedTitleTextColor="@android:color/transparent"
+                app:title="@string/testToolbarTitle"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
@@ -50,6 +56,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:elevation="0dp"
                     app:layout_collapseMode="pin"
+                    app:onNavigationIconClick="@{() -> testViewModel.onClickTransaction(TransactionTestEvent.NAVIGATION)}"
                     app:navigationIcon="@drawable/ic_arrow_back" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>

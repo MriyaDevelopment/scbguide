@@ -41,7 +41,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/detailLectureImgMarginTop"
-                    android:layout_marginBottom="@dimen/detailLectureImgMarginBottom"
                     android:scaleType="centerCrop"
                     android:src="@drawable/test"
                     app:layout_collapseMode="parallax"
@@ -68,6 +67,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/background_bottom_sheet"
             android:fillViewport="true"
+            android:paddingBottom="@dimen/detailLectureContainerPaddingBottom"
             android:scrollbars="none"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 

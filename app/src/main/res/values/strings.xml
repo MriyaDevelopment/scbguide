@@ -14,13 +14,17 @@
     <string name="mainLecture">Лекторий</string>
     <string name="mainTest">Проверь себя</string>
     <string name="mainThemes">%s тем</string>
+    <string name="mainTestThemes">45 тем</string>
+    <string name="mainLectureThemes">95 тем</string>
 
     <!-- Lecture -->
     <string name="lectureSearchHint">Поиск</string>
     <string name="lectureToolbarTitle">Лекторий</string>
+    <string name="lectureViewDevice">%s устройств</string>
 
+    <!-- Test -->
+    <string name="testToolbarTitle">Испытания</string>
     <!-- Details Lecture -->
     <string name="detailsLectureTitleDescription">Описание</string>
     <string name="detailsLectureWatchFull">Смотреть полностью</string>
-    <!-- Topics -->
 </resources>

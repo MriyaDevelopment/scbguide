@@ -74,6 +74,10 @@
     <dimen name="testViewCompleteMarginEnd">14dp</dimen>
     <dimen name="testViewCompleteMarginBottom">13dp</dimen>
     <dimen name="testViewCompleteCardCorner">30dp</dimen>
+    <dimen name="testViewImgHeight">69dp</dimen>
+    <dimen name="testViewImgWight">72dp</dimen>
+    <dimen name="testViewMarginBottom">36dp</dimen>
+    <dimen name="testViewMarginHorizontal">19dp</dimen>
 
     <!-- Detail Lecture-->
     <dimen name="detailLectureRecViewPaddingTop">31dp</dimen>
@@ -90,7 +94,7 @@
     <dimen name="detailLectureViewWatchFullMarginEnd">10dp</dimen>
     <dimen name="detailLectureViewWatchFullMarginBottom">10dp</dimen>
     <dimen name="detailLectureImgMarginVertical">15dp</dimen>
-    <dimen name="detailLectureImgMarginTop">40dp</dimen>
+    <dimen name="detailLectureImgMarginTop">10dp</dimen>
     <dimen name="detailLectureImgMarginBottom">20dp</dimen>
     <dimen name="detailLectureNameMarginTop">11dp</dimen>
     <dimen name="detailLectureNameMarginHorizontal">27dp</dimen>
@@ -101,6 +105,7 @@
     <dimen name="detailLectureDividerWight">3dp</dimen>
     <dimen name="detailLectureWatchFullCorner">15dp</dimen>
     <dimen name="detailLectureWatchFullHeight">40dp</dimen>
+    <dimen name="detailLectureContainerPaddingBottom">10dp</dimen>
 
     <!-- Detail Test-->
     <dimen name="detailTestCardImgCorner">12dp</dimen>
