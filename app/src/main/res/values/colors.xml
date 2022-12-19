@@ -8,18 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="black_283665">#283665</color>
-    <color name="black_35467D">#35467D</color>
-    <color name="blue_6689E5">#6689E5</color>
-    <color name="white_FFFFFF">#FFFFFF</color>
-    <color name="grey_64748B">#64748B</color>
-    <color name="orange_FD7050">#FD7050</color>
-    <color name="main_background">#FEFAEE</color>
-    <color name="green_2C8837">#2C8837</color>
-    <color name="black_171E33">#171E33</color>
-    <color name="black_334155">#334155</color>
-    <color name="black_030303">#030303</color>
-
-    <color name="dark_yellow_0D6D6666">#0D6D6666</color>
-    <color name="transparent">#00000000</color>
+    <!-- ShimmerColors -->
+    <color name="backgroundDefaultShimmer">#f6f3f9</color>
+    <color name="shimmer">#ffffff</color>
+    <!-- /ShimmerColors -->
 </resources>

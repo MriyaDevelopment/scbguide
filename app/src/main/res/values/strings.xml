@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">scbguide</string>
-    <string name="buttonErrorDialogRepeat">Повторить подключение</string>
-    <string name="buttonErrorDialogCancel">Отменить</string>
-    <string name="buttonErrorLocalDate">Загрузить локальные данные</string>
-    <string name="messageFailure">Произошла неизвестная ошибка, проверьте соединение с интернет</string>
+
+    <!--  Alert  -->
+    <string name="alert_warning">Предупреждение</string>
+    <string name="alert_message">Вы уверены что хотите сделать это?</string>
+    <string name="alert_cancel">Отмена</string>
+    <string name="alert_accept">Продолжить</string>
+    <!--  /Alert  -->
 
     <!-- Main -->
     <string name="mainTitle">Добро пожаловать в справочник!</string>

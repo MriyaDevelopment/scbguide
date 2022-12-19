@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/coordinator"
-    android:background="@color/main_background"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/nav_host_fragment"
+        android:id="@+id/fgMainContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/navigation_main_graph"
         tools:ignore="FragmentTagUsage" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
