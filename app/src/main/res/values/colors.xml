@@ -12,4 +12,10 @@
     <color name="backgroundDefaultShimmer">#f6f3f9</color>
     <color name="shimmer">#ffffff</color>
     <!-- /ShimmerColors -->
+
+    <color name="orange">#FD7050</color>
+    <color name="blue">#6689E5</color>
+    <color name="neutral500">#64748B</color>
+    <color name="grey">#FBFBFB</color>
+    <color name="background">#FEFAEE</color>
 </resources>

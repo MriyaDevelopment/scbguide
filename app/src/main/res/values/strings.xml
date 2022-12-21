@@ -8,26 +8,14 @@
     <string name="alert_accept">Продолжить</string>
     <!--  /Alert  -->
 
-    <!-- Main -->
-    <string name="mainTitle">Добро пожаловать в справочник!</string>
-    <string name="mainFirstPathSubTitle">+150</string>
-    <string name="mainSecondPathSubTitle">устройств</string>
-    <string name="mainBannerTipsTitle">Совет по изучению устройств</string>
-    <string name="mainBannerTipsDescription">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
-    <string name="mainLecture">Лекторий</string>
-    <string name="mainTest">Проверь себя</string>
-    <string name="mainThemes">%s тем</string>
-    <string name="mainTestThemes">45 тем</string>
-    <string name="mainLectureThemes">95 тем</string>
+    <!--  BottomNavMenu  -->
+    <string name="bnm_home">Главная</string>
+    <string name="bnm_test">Испытания</string>
+    <string name="bnm_favorite">Избранное</string>
+    <string name="bnm_profile">Профиль</string>
+    <!--  /BottomNavMenu  -->
 
-    <!-- Lecture -->
-    <string name="lectureSearchHint">Поиск</string>
-    <string name="lectureToolbarTitle">Лекторий</string>
-    <string name="lectureViewDevice">%s устройств</string>
-
-    <!-- Test -->
-    <string name="testToolbarTitle">Испытания</string>
-    <!-- Details Lecture -->
-    <string name="detailsLectureTitleDescription">Описание</string>
-    <string name="detailsLectureWatchFull">Смотреть полностью</string>
+    <!--  Profile  -->
+    <string name="profile_title">Профиль</string>
+    <!--  /Profile  -->
 </resources>

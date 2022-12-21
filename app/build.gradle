@@ -18,12 +18,12 @@ android {
         }
     }
 
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.spravochnic.scbguide"
         minSdk 24
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -53,7 +53,7 @@ android {
 dependencies {
     def nav_version = "2.5.3"
     def cor_version = "1.6.4"
-    def material_version = "1.8.0-beta01"
+    def material_version = "1.6.1"
     def pref_version = "1.2.0"
     def retrofit_version = '2.9.0'
     def coil_version = '2.2.2'

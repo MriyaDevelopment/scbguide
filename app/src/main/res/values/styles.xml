@@ -6,5 +6,34 @@
         <item name="android:windowEnterAnimation">@anim/bottom_dialog_slide_up</item>
         <item name="android:windowExitAnimation">@anim/bottom_dialog_slide_down</item>
     </style>
+    <!--  /BottomSheetStyles -->
+
+    <!--  ShapeAppearanceOverlayStyles -->
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <!--  /ShapeAppearanceOverlayStyles -->
+
+    <!--  AppBarStyles -->
+    <style name="DefaultAppBar">
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <!--  /AppBarStyles -->
+
+    <!--  ToolbarStyles -->
+    <style name="Vita.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/background</item>
+        <item name="titleCentered">true</item>
+        <item name="subtitleCentered">true</item>
+        <item name="android:elevation">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="fontWeight">600</item>
+        <item name="lineHeight">0.38sp</item>
+        <item name="titleTextColor">@color/blue</item>
+        <item name="titleTextAppearance">@style/ToolbarTextAppearance</item>
+    </style>
+    <!--  /ToolbarStyles -->
 
 </resources>

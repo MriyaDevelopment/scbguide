@@ -8,13 +8,19 @@ import androidx.activity.addCallback
 import androidx.annotation.CallSuper
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.transition.TransitionInflater
 import androidx.viewbinding.ViewBinding
+import com.spravochnic.scbguide.NavigationViewModel
 
 abstract class BaseFragment<VB : ViewBinding>(
     private val vbInflate: (LayoutInflater, ViewGroup?, Boolean) -> VB
 ) : Fragment() {
+
+    protected open val isBnvVisible = true
+
+    protected val navViewModel by activityViewModels<NavigationViewModel>()
 
     private var _binding: VB? = null
     protected val binding: VB
@@ -58,6 +64,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
         initOnBackPressedDispatcher()
+        setBnvVisible()
         setListeners()
         setObservable()
         setAdapter()
@@ -67,6 +74,10 @@ abstract class BaseFragment<VB : ViewBinding>(
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             onBackPressed()
         }
+    }
+
+    private fun setBnvVisible() {
+        navViewModel.onChangeBnvVisible(isBnvVisible)
     }
 
     protected open fun onBackPressed() {

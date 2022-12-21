@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--  BottomNavViewTextStyles -->
+    <style name="BottomNavViewTextInactiveStyle">
+        <item name="android:textSize">11sp</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
 
+    <style name="BottomNavViewTextActiveStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+    <!--  /BottomNavViewTextStyles -->
+
+    <!--  ToolbarTextStyles -->
+    <style name="ToolbarTextAppearance">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <!-- /ToolbarTextStyles -->
 </resources>
