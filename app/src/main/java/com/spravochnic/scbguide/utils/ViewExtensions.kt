@@ -10,6 +10,8 @@ import androidx.annotation.*
 import androidx.core.content.ContextCompat
 import androidx.core.view.*
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.card.MaterialCardView
+import com.google.android.material.shape.CornerFamily
 
 fun ViewBinding.getString(@StringRes id: Int, vararg formatArgs: Any?) = root.resources.getString(id, *formatArgs)
 fun ViewBinding.getColor(@ColorRes id: Int) = ContextCompat.getColor(root.context, id)
@@ -29,6 +31,16 @@ fun View.updateMargin(
         marginEnd = right
         bottomMargin = bottom
     }
+}
+
+fun MaterialCardView.setCornerRadius(topLeft: Float, topRight: Float, bottomLeft: Float, bottomRight: Float) {
+    val builderShapeModel = this.shapeAppearanceModel.toBuilder().apply {
+        setTopLeftCorner(CornerFamily.ROUNDED, topLeft)
+        setTopRightCorner(CornerFamily.ROUNDED, topRight)
+        setBottomLeftCorner(CornerFamily.ROUNDED, bottomLeft)
+        setBottomRightCorner(CornerFamily.ROUNDED, bottomRight)
+    }
+    this.shapeAppearanceModel = builderShapeModel.build()
 }
 
 fun View.measureSize(): Size {

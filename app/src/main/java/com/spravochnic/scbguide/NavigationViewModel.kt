@@ -16,6 +16,8 @@ class NavigationViewModel @Inject constructor() : ViewModel() {
     private val _bnvVisible = MutableStateFlow(true)
     val bnvVisible = _bnvVisible.asStateFlow()
 
+    var heightBnvTab: Int = 0
+
     private val _navigateToDeepLink = Channel<TabDeepLink>(Channel.CONFLATED)
     val navigateToDeepLink = _navigateToDeepLink.receiveAsFlow()
 

@@ -15,9 +15,15 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/mtProfile"
             style="@style/Vita.Toolbar"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/profile_title" />
+            app:title="@string/profile_title" >
+
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -57,7 +63,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="20sp"
-                tools:text="Сергей" />
+                android:text="Сергей" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtEmailProfile"
@@ -68,14 +74,13 @@
                 android:textAlignment="center"
                 android:textColor="@color/neutral500"
                 android:textSize="15sp"
-                tools:text="sergei.pokhodai@gmail.com" />
+                android:text="sergei.pokhodai@gmail.com" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:paddingVertical="10dp"
                 android:orientation="vertical"
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

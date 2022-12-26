@@ -16,6 +16,9 @@
     <color name="orange">#FD7050</color>
     <color name="blue">#6689E5</color>
     <color name="neutral500">#64748B</color>
-    <color name="grey">#FBFBFB</color>
+    <color name="light_grey">#FBFBFB</color>
+    <color name="grey">#BFC2D7</color>
     <color name="background">#FEFAEE</color>
+    <color name="dark_blue">#171E33</color>
+    <color name="red">#E5473F</color>
 </resources>

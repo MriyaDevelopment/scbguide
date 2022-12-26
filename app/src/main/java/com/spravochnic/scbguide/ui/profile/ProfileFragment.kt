@@ -1,16 +1,29 @@
 package com.spravochnic.scbguide.ui.profile
 
+import android.os.Bundle
+import android.view.View
 import androidx.core.net.toUri
+import androidx.core.view.updatePadding
 import androidx.fragment.app.viewModels
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentProfileBinding
+import com.spravochnic.scbguide.ui.profile.adapter.ProfileAdapter
+import com.spravochnic.scbguide.utils.dp
+import com.spravochnic.scbguide.utils.enums.ProfileType
+import com.spravochnic.scbguide.utils.observe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
     private val viewModel by viewModels<ProfileViewModel>()
+    private val adapter by lazy { ProfileAdapter() }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.rvProfile.updatePadding(0, 0, 0, navViewModel.heightBnvTab+10.dp.toInt())
+    }
 
     override fun onBackPressed() {
         navViewModel.onClickHardDeepLink("".toUri(), R.id.main_nav_graph)
@@ -19,5 +32,18 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
     override fun setAdapter() = with(binding) {
         rvProfile.itemAnimator = null
         rvProfile.isNestedScrollingEnabled = false
+        rvProfile.adapter = adapter
+    }
+
+    override fun setListeners() = with(binding) {
+        adapter.setOnClickProfileItemListener { type ->
+
+        }
+    }
+
+    override fun setObservable() = with(viewModel) {
+        profileFlow.observe(viewLifecycleOwner) { list ->
+            adapter.submitList(list)
+        }
     }
 }

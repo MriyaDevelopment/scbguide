@@ -2,10 +2,7 @@ package com.spravochnic.scbguide.ui.tabs
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.isVisible
-import androidx.core.view.updatePadding
+import androidx.core.view.*
 import androidx.navigation.NavGraph
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavOptions
@@ -14,6 +11,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentTabsBinding
+import com.spravochnic.scbguide.utils.LogUtil
+import com.spravochnic.scbguide.utils.dp
 import com.spravochnic.scbguide.utils.observe
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,6 +32,9 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>(FragmentTabsBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBottomNavigation()
+        binding.bnvTabsContainer.doOnLayout {
+            navViewModel.heightBnvTab = it.height+10.dp.toInt()
+        }
     }
 
     private fun initBottomNavigation() = with(binding) {

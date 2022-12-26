@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/btn_search.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/dash_line.xml" value="0.4768026123046876" />
         <entry key="app/src/main/res/drawable/ic_arrow_grey.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_arrow_right.xml" value="0.2185" />
         <entry key="app/src/main/res/drawable/ic_award.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.2185" />
         <entry key="app/src/main/res/drawable/ic_complete.xml" value="0.197" />
@@ -20,6 +21,9 @@
         <entry key="app/src/main/res/drawable/ic_first_man.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_lamp.xml" value="0.1635" />
         <entry key="app/src/main/res/drawable/ic_lecture.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_my_lecture.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/ic_privacy_policy.xml" value="0.2185" />
+        <entry key="app/src/main/res/drawable/ic_terms_service.xml" value="0.2185" />
         <entry key="app/src/main/res/drawable/ic_test.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_traffic_lights.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/img_placeholder.xml" value="0.155" />
@@ -40,6 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_tabs.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_topic.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/view_details_lecture.xml" value="0.3254645084989244" />
         <entry key="app/src/main/res/layout/view_details_test.xml" value="0.3468313908231432" />
         <entry key="app/src/main/res/layout/view_lecture.xml" value="0.5286132812500001" />
