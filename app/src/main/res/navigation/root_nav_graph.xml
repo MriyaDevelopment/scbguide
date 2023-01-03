@@ -2,10 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_nav_graph"
-    app:startDestination="@id/tabsFragment">
+    app:startDestination="@id/auth_nav_graph">
 
     <fragment
         android:id="@+id/tabsFragment"
         android:name="com.spravochnic.scbguide.ui.tabs.TabsFragment"
         android:label="TabsFragment" />
+
+    <include app:graph="@navigation/auth_nav_graph" />
+
 </navigation>

@@ -28,7 +28,7 @@ object RetrofitModule {
         factory: GsonConverterFactory
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("http://ovz5.j04713753.0n03n.vps.myjino.ru/public/api/")
             .client(okHttpClient)
             .addConverterFactory(factory)
             .build()

@@ -19,6 +19,10 @@ fun ViewBinding.getDrawable(@DrawableRes id: Int) = ContextCompat.getDrawable(ro
 fun ViewBinding.getDimen(@DimenRes id: Int) = this.root.resources.getDimension(id)
 fun ViewBinding.getColorStateList(@ColorRes id: Int) = ContextCompat.getColorStateList(root.context, id)
 
+fun View.getColorStateList(@ColorRes id: Int) = ContextCompat.getColorStateList(context, id)
+fun View.getDimen(@DimenRes id: Int) = resources.getDimension(id)
+fun View.getColor(@ColorRes id: Int) = ContextCompat.getColor(context, id)
+
 fun View.updateMargin(
     @Px left: Int = marginStart,
     @Px top: Int = marginTop,

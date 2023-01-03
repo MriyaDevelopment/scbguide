@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">scbguide</string>
 
+    <string name="update">Обновить</string>
+
     <!--  Alert  -->
     <string name="alert_warning">Предупреждение</string>
     <string name="alert_message">Вы уверены что хотите сделать это?</string>
@@ -18,4 +20,39 @@
     <!--  Profile  -->
     <string name="profile_title">Профиль</string>
     <!--  /Profile  -->
+
+    <!--  MainContent  -->
+    <string name="main_title">Добро пожаловать в справочник!</string>
+    <string name="main_sub_title"><b>+150</b> устройств</string>
+    <string name="main_item_board_title">Совет по изучению устройств</string>
+    <string name="main_item_board_description">По очередности изучай все темы. Когда все темы будут изучены проверь свои знания на тестах, повышай уровень сложности по мере исчезновения ошибок!</string>
+    <string name="main_item_lecture">Лекторий</string>
+    <string name="main_item_my_lecture_hall">Мой лекторий</string>
+    <string name="main_item_community">Сообщество</string>
+
+    <string-array name="themes_declension">
+        <item>тема</item>
+        <item>темы</item>
+        <item>тем</item>
+    </string-array>
+    <!--  /MainContent  -->
+
+    <!--  Login  -->
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_enter">Войти</string>
+    <string name="login_recovery"><u>Забыли пароль?</u></string>
+    <string name="login_register">Зарегистрироваться</string>
+    <!--  /Login  -->
+
+    <!--  Register  -->
+    <string name="register_title">Регистрация</string>
+    <string name="register_name_hint">Имя</string>
+    <string name="register_email_hint">Почта</string>
+    <string name="register_password_hint">Пароль</string>
+    <string name="register_repeat_password_hint">Повторить пароль</string>
+    <string name="register_about_me">Обо мне</string>
+    <string name="register_send">Регистрация</string>
+    <string name="register_login">Уже есть аккаунт? <u>Войти!</u></string>
+    <!--  /Register  -->
 </resources>

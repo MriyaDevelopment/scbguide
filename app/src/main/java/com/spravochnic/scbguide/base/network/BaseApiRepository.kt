@@ -5,7 +5,9 @@ import kotlinx.coroutines.flow.flow
 import okio.Buffer
 import org.json.JSONObject
 import retrofit2.Response
+import java.io.IOException
 import java.net.ConnectException
+import java.net.SocketException
 import java.net.SocketTimeoutException
 import kotlin.coroutines.cancellation.CancellationException
 
@@ -41,6 +43,7 @@ abstract class BaseApiRepository {
         val error = when (e) {
             is JsonSyntaxException -> RequestError.JSON
             is CancellationException -> RequestError.COROUTINE_CANCEL
+            is ConnectException, is SocketTimeoutException, is SocketException, is IOException -> RequestError.CONNECT
             else -> RequestError.NONE
         }
 
@@ -74,6 +77,7 @@ abstract class BaseApiRepository {
     }
 
     private enum class RequestError(val errorMessage: String, val isIgnored: Boolean = false) {
+        CONNECT("Не удалось подключиться к серверу", true),
         JSON("Не удалось декодировать данные"),
         COROUTINE_CANCEL("", true),
         NONE("Неизвестная ошибка")

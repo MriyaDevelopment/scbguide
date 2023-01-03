@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/clProfile"
     android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,16 +15,12 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/mtProfile"
-            style="@style/Vita.Toolbar"
+            style="@style/DefaultToolbar"
             app:layout_collapseMode="pin"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="@string/profile_title" >
-
-
-
-        </com.google.android.material.appbar.MaterialToolbar>
+            app:title="@string/profile_title" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
