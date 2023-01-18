@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:minHeight="20dp" />
+        android:minHeight="40dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
@@ -42,6 +42,12 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="40dp" />
+
     <com.spravochnic.scbguide.utils.view.CustomButtonView
         android:id="@+id/btnRecover"
         android:layout_width="match_parent"
@@ -51,11 +57,5 @@
         android:enabled="false"
         android:text="@string/recover_send"
         app:buttonType="blue" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:minHeight="20dp" />
 
 </LinearLayout>

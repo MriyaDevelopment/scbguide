@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:minHeight="20dp" />
+        android:minHeight="40dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txtTitleCode"
@@ -46,6 +46,12 @@
         app:rippleColor="@color/system_blue_02"
         tools:text="@string/recover_new_code_time" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="40dp" />
+
     <com.spravochnic.scbguide.utils.view.CustomButtonView
         android:id="@+id/btnCode"
         android:layout_width="match_parent"
@@ -54,11 +60,5 @@
         android:layout_marginTop="40dp"
         android:enabled="false"
         android:text="@string/code_send" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:minHeight="20dp" />
 
 </LinearLayout>
