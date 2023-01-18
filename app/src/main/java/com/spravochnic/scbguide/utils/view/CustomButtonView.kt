@@ -2,6 +2,7 @@ package com.spravochnic.scbguide.utils.view
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.graphics.Color.blue
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -13,6 +14,7 @@ import androidx.core.animation.doOnStart
 import androidx.core.os.bundleOf
 import androidx.core.view.doOnLayout
 import com.spravochnic.scbguide.R
+import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.databinding.ViewCustomButtonBinding
 import com.spravochnic.scbguide.utils.*
 import com.spravochnic.scbguide.utils.ClickUtils.setOnThrottleClickListener
@@ -31,13 +33,13 @@ class CustomButtonView : FrameLayout {
     private val blueColorStateList = getColorStateList(R.color.background_button_enabled)
     private val redColorStateList = getColorStateList(R.color.background_button_enabled_red)
     private val transparentStateList = getColorStateList(R.color.transparent)
-    private val systemRedLightColorStateList = getColorStateList(R.color.red)
+    private val systemRedLightColorStateList = getColorStateList(R.color.system_red_01)
     private val whiteColorStateList = getColorStateList(R.color.white)
     private val whiteColor = getColor(R.color.white)
-    private val redColor = getColor(R.color.red)
+    private val redColor = getColor(R.color.system_red_01)
     private val strokeWidthOutlineRedButton = 2.dp
 
-    var type: Type = Type.BLUE
+    var type: Type = Type.blue
         set(value) {
             field = value
             initType()
@@ -55,10 +57,19 @@ class CustomButtonView : FrameLayout {
             initText()
         }
 
+    fun <T> setUIState(uiState: UIState<T>) {
+        when (uiState) {
+            is UIState.UILoading -> state = State.LOADING
+            is UIState.UIError -> state = State.ERROR
+            is UIState.UIPreSuccess -> state = State.DONE
+            else -> Unit
+        }
+    }
+
     override fun onSaveInstanceState(): Parcelable {
         return bundleOf(
             Constants.SUPER_STATE to super.onSaveInstanceState(),
-            TYPE to type.value,
+            TYPE to type.name,
             TEXT to text
         )
     }
@@ -67,9 +78,10 @@ class CustomButtonView : FrameLayout {
         var restoreState = state
         if (restoreState is Bundle) {
             val bundle = restoreState
+            val buttonType = bundle.getString(TYPE)
             type = Type.values()
-                .firstOrNull { it.value == bundle.getInt(TYPE) }
-                ?: Type.BLUE
+                .firstOrNull { it.name == buttonType }
+                ?: Type.blue
             text = bundle.getString(TEXT) ?: ""
             restoreState = bundle.getParcelable(Constants.SUPER_STATE)
         }
@@ -108,9 +120,8 @@ class CustomButtonView : FrameLayout {
             )
 
 
-        type = Type.values()
-            .firstOrNull { it.value == a.getInt(R.styleable.CustomButtonView_buttonType, 0) }
-            ?: Type.BLUE
+        val buttonType = a.getInt(R.styleable.CustomButtonView_buttonType, 0)
+        type = Type.values()[buttonType]
 
         text = a.getString(R.styleable.CustomButtonView_android_text) ?: ""
 
@@ -180,9 +191,9 @@ class CustomButtonView : FrameLayout {
 
     private fun initType() {
         when (type) {
-            Type.BLUE -> setBlueButton()
-            Type.RED -> setRedButton()
-            Type.OUTLINE_RED -> setOutlineRed()
+            Type.blue -> setBlueButton()
+            Type.red -> setRedButton()
+            Type.outline_red -> setOutlineRed()
         }
     }
 
@@ -265,10 +276,10 @@ class CustomButtonView : FrameLayout {
         }
     }
 
-    enum class Type(val value: Int) {
-        BLUE(0),
-        RED(1),
-        OUTLINE_RED(2),
+    enum class Type {
+        blue,
+        red,
+        outline_red
     }
 
     enum class State {

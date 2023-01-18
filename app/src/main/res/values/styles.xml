@@ -24,14 +24,14 @@
 
     <!--  ToolbarStyles -->
     <style name="DefaultToolbar" parent="Widget.Material3.Toolbar">
-        <item name="android:background">@color/background</item>
+        <item name="android:background">@color/system_background</item>
         <item name="titleCentered">true</item>
         <item name="subtitleCentered">true</item>
         <item name="android:elevation">0dp</item>
         <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="fontWeight">600</item>
         <item name="lineHeight">0.38sp</item>
-        <item name="titleTextColor">@color/blue</item>
+        <item name="titleTextColor">@color/system_blue_01</item>
         <item name="titleTextAppearance">@style/ToolbarTextAppearance</item>
     </style>
 
@@ -78,12 +78,12 @@
 
     <style name="TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="iconTint">@color/black</item>
-        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textColor">@color/system_blue_03</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0.03</item>
-        <item name="rippleColor">@color/blue</item>
+        <item name="rippleColor">@color/system_blue_01</item>
         <item name="cornerRadius">10dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:minHeight">0dp</item>
@@ -96,7 +96,7 @@
         <item name="boxStrokeWidthFocused">1.5dp</item>
         <item name="hintEnabled">false</item>
         <item name="errorIconDrawable">@null</item>
-        <item name="android:textColorHint">@color/light_blue</item>
+        <item name="android:textColorHint">@color/system_blue_02</item>
         <item name="boxStrokeColor">@color/background_text_input_layout</item>
         <item name="boxCornerRadiusBottomEnd">10dp</item>
         <item name="boxCornerRadiusBottomStart">10dp</item>
@@ -107,9 +107,18 @@
 
     <!--  TextInputEditTextStyles -->
     <style name="TextInputEditText">
-        <item name="android:textColorHint">@color/light_blue</item>
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColorHint">@color/system_blue_02</item>
+        <item name="android:textColor">@color/system_blue_01</item>
         <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="CodeTextInputEditText" parent="TextInputEditText">
+        <item name="android:textAlignment">center</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:ems">1</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:textSize">20sp</item>
     </style>
     <!--  /TextInputEditTextStyles -->
 

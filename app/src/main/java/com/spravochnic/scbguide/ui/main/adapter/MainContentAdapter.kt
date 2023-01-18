@@ -6,15 +6,16 @@ import com.spravochnic.scbguide.databinding.ItemBoardBinding
 import com.spravochnic.scbguide.databinding.ItemMainBinding
 import com.spravochnic.scbguide.utils.WordDeclension
 import com.spravochnic.scbguide.utils.getString
+import javax.inject.Inject
 
-class MainContentAdapter : BaseListAdapter<MainContentAdapter.ItemMainContent>() {
+class MainContentAdapter @Inject constructor(): BaseListAdapter<MainContentAdapter.ItemMainContent>() {
 
     override fun build() {
         baseViewHolder(ItemMainContent.WrapBoard::class, ItemBoardBinding::inflate) {}
 
         baseViewHolder(ItemMainContent.WrapCategory::class, ItemMainBinding::inflate) { item ->
             binding.run {
-                item.result.mainContentType?.let {
+                item.result.type?.let {
                     imgItemMain.setImageResource(it.icon)
                     txtTitleItemMain.text = getString(it.title)
                 }
@@ -28,6 +29,6 @@ class MainContentAdapter : BaseListAdapter<MainContentAdapter.ItemMainContent>()
 
     sealed class ItemMainContent {
         object WrapBoard : ItemMainContent()
-        data class WrapCategory(val result: MainResponse.Result) : ItemMainContent()
+        data class WrapCategory(val result: MainResponse.MainResult) : ItemMainContent()
     }
 }

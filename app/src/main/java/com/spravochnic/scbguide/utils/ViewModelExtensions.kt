@@ -12,3 +12,9 @@ fun ViewModel.launchOnDefault(
 ): Job {
     return viewModelScope.launch(Dispatchers.Default, block = block)
 }
+
+fun ViewModel.launchOnIO(
+    block: suspend CoroutineScope.() -> Unit
+): Job {
+    return viewModelScope.launch(Dispatchers.IO, block = block)
+}

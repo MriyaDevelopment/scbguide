@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/system_background">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsvLogin"
@@ -17,12 +17,24 @@
             android:paddingHorizontal="20dp"
             android:paddingBottom="20dp">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="20dp"/>
+
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="50dp"
                 android:src="@drawable/img_scb_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilLogin"
@@ -48,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/light_blue">
+                app:endIconTint="@color/system_blue_02">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtPasswordLogin"

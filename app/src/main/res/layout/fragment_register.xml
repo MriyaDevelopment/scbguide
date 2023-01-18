@@ -5,7 +5,7 @@
     android:id="@+id/clRegister"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/system_background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/ablRegister"
@@ -44,12 +44,12 @@
                 android:layout_gravity="center"
                 android:background="@color/white"
                 android:padding="3dp"
-                android:scaleType="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                 app:srcCompat="@drawable/ic_camera"
-                app:strokeColor="@color/blue"
-                app:strokeWidth="3dp"
-                app:tint="@color/blue" />
+                app:strokeColor="@color/system_blue_01"
+                app:strokeWidth="3dp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilNameRegister"
@@ -59,7 +59,7 @@
                 android:layout_marginTop="20dp"
                 app:endIconDrawable="@drawable/ic_cancel"
                 app:endIconMode="custom"
-                app:endIconTint="@color/blue">
+                app:endIconTint="@color/system_blue_01">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtNameRegister"
@@ -80,7 +80,7 @@
                 android:layout_marginTop="10dp"
                 app:endIconDrawable="@drawable/ic_question_mark"
                 app:endIconMode="custom"
-                app:endIconTint="@color/blue">
+                app:endIconTint="@color/system_blue_01">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtEmailRegister"
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/light_blue">
+                app:endIconTint="@color/system_blue_02">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtPasswordRegister"
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/light_blue">
+                app:endIconTint="@color/system_blue_02">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtRepeatPasswordRegister"

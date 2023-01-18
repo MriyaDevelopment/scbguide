@@ -33,7 +33,7 @@
                     app:layout_scrollFlags="scroll|enterAlways|snap"
                     app:title="@string/main_title"
                     app:titleCentered="false"
-                    app:titleTextColor="@color/dark" />
+                    app:titleTextColor="@color/system_blue_04" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txtSubTitleMain"
@@ -44,7 +44,7 @@
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/main_sub_title"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/system_blue_01"
                     app:drawableLeftCompat="@drawable/ic_award" />
 
             </LinearLayout>

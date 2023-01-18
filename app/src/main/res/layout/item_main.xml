@@ -8,7 +8,7 @@
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="20dp"
     app:cardElevation="0dp"
-    app:rippleColor="@color/blue">
+    app:rippleColor="@color/system_blue_01">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:id="@+id/imgItemMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/system_orange_01"
             tools:src="@drawable/ic_lecture"
             app:layout_constraintBottom_toBottomOf="@+id/txtSubTitleItemMain"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/dark"
+            android:textColor="@color/system_blue_04"
             android:textSize="15sp"
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintStart_toEndOf="@+id/imgItemMain"
@@ -45,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/neutral500"
+            android:textColor="@color/system_neutral_01"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/txtTitleItemMain"

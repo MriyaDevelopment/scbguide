@@ -1,9 +1,8 @@
 package com.spravochnic.scbguide.ui.profile.adapter
 
 import android.view.View.TEXT_ALIGNMENT_CENTER
-import android.widget.BaseAdapter
 import androidx.core.view.isVisible
-import com.google.android.material.shape.CornerFamily
+import androidx.recyclerview.widget.RecyclerView
 import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.base.ui.adapter.BaseListAdapter
 import com.spravochnic.scbguide.databinding.ItemProfileBinding
@@ -12,8 +11,9 @@ import com.spravochnic.scbguide.utils.enums.ProfileType
 import com.spravochnic.scbguide.utils.getColor
 import com.spravochnic.scbguide.utils.setCornerRadius
 import com.spravochnic.scbguide.utils.updateMargin
+import javax.inject.Inject
 
-class ProfileAdapter : BaseListAdapter<ProfileAdapter.ItemProfile>() {
+class ProfileAdapter @Inject constructor(): BaseListAdapter<ProfileAdapter.ItemProfile>() {
 
     private var onClickProfileItemListener: ((ProfileType) -> Unit)? = null
 
@@ -30,7 +30,7 @@ class ProfileAdapter : BaseListAdapter<ProfileAdapter.ItemProfile>() {
                     txtTextProfile.textAlignment = TEXT_ALIGNMENT_CENTER
                 }
                 txtTextProfile.text = item.type.text
-                if (item.type == ProfileType.DELETE) txtTextProfile.setTextColor(getColor(R.color.red))
+                if (item.type == ProfileType.DELETE) txtTextProfile.setTextColor(getColor(R.color.system_red_01))
 
                 viewDividerProfile.isVisible = !item.bottom
                 val top = if (item.top) 10.dp else 0f

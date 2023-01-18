@@ -53,6 +53,34 @@
     <string name="register_repeat_password_hint">Повторить пароль</string>
     <string name="register_about_me">Обо мне</string>
     <string name="register_send">Регистрация</string>
+    <string name="register_success">Регистрация прошла успешно!</string>
     <string name="register_login">Уже есть аккаунт? <u>Войти!</u></string>
+    <string name="register_email_balloon">Почта должна быть настоящей, иначе вы не сможете восстановить свои данные!</string>
+    <string name="register_parity_password_error">Пароли не равны!</string>
     <!--  /Register  -->
+
+    <!--  ServiceRecover  -->
+    <string name="recover_service_title">Восстановление</string>
+    <!--  /ServiceRecover  -->
+
+    <!--  Recover  -->
+    <string name="recover_title">Введите почту. На вашу почту будет отправлен четырехзначный код!</string>
+    <string name="recover_email_hint">Email</string>
+    <string name="recover_send">Отправить</string>
+    <string name="recover_new_code_time">Получить новый код через %s</string>
+    <string name="recover_new_code">Получить новый код</string>
+    <!--  /Recover  -->
+
+    <!--  Code  -->
+    <string name="code_title">Введите код отправленный на почту %s</string>
+    <string name="code_send">Отправить</string>
+    <!--  /Code  -->
+
+    <!--  Password  -->
+    <string name="password_title">Введите новый пароль и повторите его</string>
+    <string name="password_new_hint">Новый пароль</string>
+    <string name="password_new_repeat_hint">Повторите пароль</string>
+    <string name="password_btn">Отправить</string>
+    <string name="password_success">Смена пароля прошла успешно!</string>
+    <!--  /Password  -->
 </resources>

@@ -9,7 +9,7 @@
         android:id="@+id/loginFragment"
         android:name="com.spravochnic.scbguide.ui.auth.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
@@ -17,12 +17,22 @@
             app:exitAnim="@anim/fragment_low_slide_left"
             app:popEnterAnim="@anim/fragment_low_slide_right"
             app:popExitAnim="@anim/fragment_slide_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_recoverServiceFragment"
+            app:destination="@id/recoverServiceFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.spravochnic.scbguide.ui.auth.register.RegisterFragment"
         android:label="RegisterFragment"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/recoverServiceFragment"
+        android:name="com.spravochnic.scbguide.ui.auth.recovery_service.RecoverServiceFragment"
+        android:label="RecoverServiceFragment"
+        tools:layout="@layout/fragment_service_recover" />
 
 </navigation>

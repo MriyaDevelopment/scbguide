@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Size
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
@@ -12,6 +13,7 @@ import androidx.core.view.*
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.shape.CornerFamily
+import com.google.android.material.textfield.TextInputEditText
 
 fun ViewBinding.getString(@StringRes id: Int, vararg formatArgs: Any?) = root.resources.getString(id, *formatArgs)
 fun ViewBinding.getColor(@ColorRes id: Int) = ContextCompat.getColor(root.context, id)
@@ -92,7 +94,6 @@ fun View.slideDown(duration: Int = 500, minus: Int) {
         this.layoutParams = layoutParams
     }
     valueAnimator.start()
-
 }
 
 fun View.showSoftKeyboard() {
@@ -106,4 +107,19 @@ fun View.hideSoftKeyboard() {
     val imm =
         context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(windowToken, 0)
+}
+
+fun TextInputEditText.inputActionDone(isEnabledBtn: Boolean, action: () -> Unit) {
+    this.setOnEditorActionListener { _, actionId, _ ->
+        if (actionId != EditorInfo.IME_ACTION_DONE)
+            return@setOnEditorActionListener false
+
+        if (isEnabledBtn) {
+            action.invoke()
+        } else {
+            this.hideSoftKeyboard()
+        }
+
+        return@setOnEditorActionListener true
+    }
 }

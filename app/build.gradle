@@ -67,6 +67,7 @@ dependencies {
     def hilt_version='2.44.2'
     def shimmer_version = '0.5.0'
     def splash_version = '1.0.0'
+    def balloon_version = '1.5.2'
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -117,6 +118,9 @@ dependencies {
 
     //SplashScreen
     implementation "androidx.core:core-splashscreen:$splash_version"
+
+    //Balloon
+    implementation "com.github.skydoves:balloon:$balloon_version"
 
     //noinspection GradleDependency
     implementation 'androidx.core:core-ktx:1.8.0'

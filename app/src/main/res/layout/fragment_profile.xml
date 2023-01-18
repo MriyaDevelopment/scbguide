@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/clProfile"
-    android:background="@color/background">
+    android:background="@color/system_background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/ablProfile"
@@ -46,9 +46,9 @@
                 android:scaleType="center"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
                 app:srcCompat="@drawable/ic_camera"
-                app:strokeColor="@color/blue"
+                app:strokeColor="@color/system_blue_01"
                 app:strokeWidth="3dp"
-                app:tint="@color/blue" />
+                app:tint="@color/system_blue_01" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txtNameProfile"
@@ -58,7 +58,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textAlignment="center"
-                android:textColor="@color/blue"
+                android:textColor="@color/system_blue_01"
                 android:textSize="20sp"
                 android:text="Сергей" />
 
@@ -69,7 +69,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:textAlignment="center"
-                android:textColor="@color/neutral500"
+                android:textColor="@color/system_neutral_01"
                 android:textSize="15sp"
                 android:text="sergei.pokhodai@gmail.com" />
 

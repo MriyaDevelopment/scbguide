@@ -14,12 +14,15 @@ import com.spravochnic.scbguide.utils.dp
 import com.spravochnic.scbguide.utils.observe
 import com.spravochnic.scbguide.utils.observeLatest
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
     private val viewModel by viewModels<MainContentViewModel>()
-    private val adapter by lazy { MainContentAdapter() }
+
+    @Inject
+    lateinit var adapter: MainContentAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

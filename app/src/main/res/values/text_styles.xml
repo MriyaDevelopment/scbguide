@@ -15,7 +15,7 @@
 
     <!--  ToolbarTextStyles -->
     <style name="ToolbarTextAppearance">
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/system_blue_01</item>
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>

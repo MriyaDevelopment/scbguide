@@ -13,12 +13,15 @@ import com.spravochnic.scbguide.utils.dp
 import com.spravochnic.scbguide.utils.enums.ProfileType
 import com.spravochnic.scbguide.utils.observe
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
     private val viewModel by viewModels<ProfileViewModel>()
-    private val adapter by lazy { ProfileAdapter() }
+
+    @Inject
+    lateinit var adapter: ProfileAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
