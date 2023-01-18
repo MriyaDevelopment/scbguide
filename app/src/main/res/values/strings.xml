@@ -37,6 +37,11 @@
     </string-array>
     <!--  /MainContent  -->
 
+    <!--  Quiz  -->
+    <string name="quiz_title">Испытания</string>
+    <string name="quiz_sub_title">Испытания СЦБ-иста</string>
+    <!--  /Quiz  -->
+
     <!--  Login  -->
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>

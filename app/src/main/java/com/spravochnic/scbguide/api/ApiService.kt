@@ -3,14 +3,16 @@ package com.spravochnic.scbguide.api
 import com.spravochnic.scbguide.api.requests.*
 import com.spravochnic.scbguide.api.responses.LoginResponse
 import com.spravochnic.scbguide.api.responses.MainResponse
+import com.spravochnic.scbguide.api.responses.QuizResponse
 import com.spravochnic.scbguide.api.responses.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
 
-    @POST("/getMainContent")
+    @GET("/getMainContent")
     suspend fun getMainContent(): Response<MainResponse>
 
     @POST("/login")
@@ -37,4 +39,7 @@ interface ApiService {
     suspend fun changePass(
         @Body changePassRequest: ChangePassRequest
     ): Response<Unit>
+
+    @GET("/getQuizContent")
+    suspend fun getQuizContent(): Response<QuizResponse>
 }

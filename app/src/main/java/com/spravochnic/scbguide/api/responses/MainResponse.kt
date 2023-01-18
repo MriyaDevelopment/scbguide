@@ -7,6 +7,7 @@ data class MainResponse(
     @SerializedName("result") val result: List<MainResult>,
 ) {
     data class MainResult(
+        @SerializedName("id") val id: String,
         @SerializedName("type") val type: MainContentType?,
         @SerializedName("numberOfTopics") val numberOfTopics: String,
     )

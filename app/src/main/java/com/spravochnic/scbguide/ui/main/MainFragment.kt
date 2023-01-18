@@ -33,19 +33,14 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
         rvMain.adapter = adapter
     }
 
-    override fun onStart() {
-        super.onStart()
-        viewModel.onSwipeRefresh()
-    }
-
     override fun setListeners() = with(binding) {
         srlMain.setOnRefreshListener {
-            viewModel.onSwipeRefresh()
+            onSwipeRefresh()
         }
     }
 
     override fun setObservable() = with(viewModel) {
-        mainFlow.observeLatest(viewLifecycleOwner) { uiState ->
+        mainFlow.observe(viewLifecycleOwner) { uiState ->
             when (uiState) {
                 is UIState.UINone -> binding.srlMain.isRefreshing = false
                 is UIState.UILoading -> {
@@ -59,10 +54,14 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 is UIState.UIError -> setError(
                     uiState.errorMessage,
                     isRootInvisible = false
-                ) { viewModel.onSwipeRefresh() }
+                ) { onSwipeRefresh() }
                 else -> Unit
             }
         }
+    }
+
+    private fun onSwipeRefresh() {
+        viewModel.onSwipeRefresh()
     }
 
     override fun onBackPressed() {
