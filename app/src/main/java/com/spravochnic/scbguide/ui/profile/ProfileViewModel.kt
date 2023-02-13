@@ -13,16 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProfileViewModel @Inject constructor(): ViewModel() {
 
-    private val _profileFlow = MutableStateFlow(
-        listOf(
-            ProfileAdapter.ItemProfile(ProfileType.MY_LECTURES, bottom = false, top = true),
-            ProfileAdapter.ItemProfile(ProfileType.MY_TESTS, bottom = true, top = false),
-            ProfileAdapter.ItemProfile(ProfileType.PRIVACY_POLICY, bottom = false, top = true),
-            ProfileAdapter.ItemProfile(ProfileType.TERMS_OF_SERVICE, bottom = true, top = false),
-            ProfileAdapter.ItemProfile(ProfileType.EXIT, bottom = false, top = true),
-            ProfileAdapter.ItemProfile(ProfileType.DELETE, bottom = true, top = false),
-        )
-    )
+    private val _profileFlow = MutableStateFlow<List<ProfileAdapter.ItemProfile>>(emptyList())
     val profileFlow = _profileFlow.asStateFlow()
 
 }

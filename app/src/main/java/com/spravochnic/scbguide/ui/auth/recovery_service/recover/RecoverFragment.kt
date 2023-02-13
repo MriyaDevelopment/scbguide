@@ -2,7 +2,6 @@ package com.spravochnic.scbguide.ui.auth.recovery_service.recover
 
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentRecoverBinding
 import com.spravochnic.scbguide.ui.auth.recovery_service.RecoverServiceViewModel
@@ -21,16 +20,6 @@ class RecoverFragment : BaseFragment<FragmentRecoverBinding>(FragmentRecoverBind
     override fun setObservable() = with(viewModel) {
         validatorFlow.observe(viewLifecycleOwner) {
             binding.btnRecover.isEnabled = it
-        }
-
-        recoverServiceViewModel.recoverState.observe(viewLifecycleOwner) { uiState ->
-            binding.btnRecover.setUIState(uiState)
-            when (uiState) {
-                is UIState.UILoading -> {
-                    windowInsetsController.hideKeyboard()
-                }
-                else -> Unit
-            }
         }
     }
 

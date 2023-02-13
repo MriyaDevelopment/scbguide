@@ -5,8 +5,6 @@ import android.view.View
 import androidx.core.net.toUri
 import androidx.core.view.updatePadding
 import androidx.fragment.app.viewModels
-import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentMainBinding
 import com.spravochnic.scbguide.ui.main.adapter.MainContentAdapter
@@ -26,7 +24,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvMain.updatePadding(0, 30.dp.toInt(), 0, navViewModel.heightBnvTab + 10.dp.toInt())
     }
 
     override fun setAdapter() = with(binding) {
@@ -40,24 +37,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
     }
 
     override fun setObservable() = with(viewModel) {
-        mainFlow.observe(viewLifecycleOwner) { uiState ->
-            when (uiState) {
-                is UIState.UINone -> binding.srlMain.isRefreshing = false
-                is UIState.UILoading -> {
-                    setPreLoader(false)
-                    binding.srlMain.isRefreshing = true
-                }
-                is UIState.UISuccess -> {
-                    adapter.submitList(uiState.data)
-                    setSuccess()
-                }
-                is UIState.UIError -> setError(
-                    uiState.errorMessage,
-                    isRootInvisible = false
-                ) { onSwipeRefresh() }
-                else -> Unit
-            }
-        }
+
     }
 
     private fun onSwipeRefresh() {

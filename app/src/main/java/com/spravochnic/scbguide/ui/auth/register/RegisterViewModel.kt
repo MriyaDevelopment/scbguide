@@ -6,9 +6,6 @@ import android.net.Uri
 import android.util.Base64
 import android.util.Base64OutputStream
 import androidx.lifecycle.ViewModel
-import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.api.responses.RegisterResponse
-import com.spravochnic.scbguide.base.network.MutableUIStateFlow
 import com.spravochnic.scbguide.repositories.AuthRepository
 import com.spravochnic.scbguide.repositories.source.SharedPreferencesHelper
 import com.spravochnic.scbguide.utils.*
@@ -31,9 +28,6 @@ class RegisterViewModel @Inject constructor(
     private val sharedPreferencesHelper: SharedPreferencesHelper,
     private val managerUtils: ManagerUtils
 ) : ViewModel() {
-
-    private val _registerState = MutableUIStateFlow<String>()
-    val registerState = _registerState.asUIStateFlow()
 
     private val _avatarFlow = MutableStateFlow<Uri>(Uri.EMPTY)
     val avatarFlow = _avatarFlow.asStateFlow()
@@ -81,17 +75,6 @@ class RegisterViewModel @Inject constructor(
     }
 
     fun onClickRegister() {
-        launchOnDefault {
-            _registerState.emitRequest(authRepository.register(
-                name = _nameFlow.value,
-                email = _emailFlow.value,
-                password = _passwordFlow.value,
-                avatar = if (avatarFlow.value != Uri.EMPTY) avatarFlow.value else null,
-                aboutMe = _aboutMeFlow.value.ifEmpty { null }
-            )) {
-                sharedPreferencesHelper.apiToken = it.api_token
-                managerUtils.getString(R.string.register_success)
-            }
-        }
+
     }
 }

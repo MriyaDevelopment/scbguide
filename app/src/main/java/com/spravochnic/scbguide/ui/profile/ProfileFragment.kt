@@ -25,7 +25,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvProfile.updatePadding(0, 0, 0, navViewModel.heightBnvTab+10.dp.toInt())
     }
 
     override fun onBackPressed() {

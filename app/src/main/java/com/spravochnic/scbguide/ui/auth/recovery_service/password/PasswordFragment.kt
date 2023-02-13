@@ -38,10 +38,6 @@ class PasswordFragment : BaseFragment<FragmentPasswordBinding>(FragmentPasswordB
         validateFlow.observe(viewLifecycleOwner) {
             binding.btnPassword.isEnabled = it
         }
-
-        recoverServiceViewModel.changePassState.observe(viewLifecycleOwner) { uiState ->
-            binding.btnPassword.setUIState(uiState)
-        }
     }
 
     private fun onClickChangePass() {

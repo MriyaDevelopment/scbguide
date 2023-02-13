@@ -8,7 +8,6 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import com.google.android.material.textfield.TextInputEditText
 import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentCodeBinding
 import com.spravochnic.scbguide.ui.auth.recovery_service.RecoverServiceViewModel
@@ -124,20 +123,6 @@ class CodeFragment: BaseFragment<FragmentCodeBinding>(FragmentCodeBinding::infla
 
         recoverServiceViewModel.startTimerFlow.observe(viewLifecycleOwner) {
             viewModel.startTimer()
-        }
-
-        recoverServiceViewModel.recoverState.observe(viewLifecycleOwner) {
-            if (it is UIState.UIPreSuccess) {
-                viewModel.startTimer()
-            }
-        }
-
-        recoverServiceViewModel.codeState.observe(viewLifecycleOwner) { uiState ->
-            binding.btnCode.setUIState(uiState)
-            when(uiState) {
-                is UIState.UILoading -> windowInsetsController.hideKeyboard()
-                else -> Unit
-            }
         }
     }
 

@@ -28,9 +28,6 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     protected val navViewModel by activityViewModels<NavigationViewModel>()
 
-    protected var viewStateHandler: ViewStateHandlerBinding? = null
-        private set
-
     private var _binding: VB? = null
     protected val binding: VB
         get() = _binding!!
@@ -64,12 +61,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         sharedElementEnterTransition = transition
         sharedElementReturnTransition = transition
         _binding = vbInflate(inflater, container, false)
-        viewStateHandler = ViewStateHandlerBinding.inflate(layoutInflater)
-        onCreateView()
-        return FrameLayout(requireContext()).apply {
-            addView(binding.root)
-            viewStateHandler?.root?.let(::addView)
-        }
+        return binding.root
     }
 
     @CallSuper
@@ -86,45 +78,6 @@ abstract class BaseFragment<VB : ViewBinding>(
     protected open fun initOnBackPressedDispatcher() {
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             onBackPressed()
-        }
-    }
-
-    protected fun setPreLoader(isVisible: Boolean) {
-        viewStateHandler?.run {
-            flProgressStateHandler.isVisible = isVisible
-            flErrorStateHandler.gone()
-        }
-    }
-
-    protected inline fun setError(
-        errorText: String = "Ошибка! Попробуйте еще раз!",
-        isRootInvisible: Boolean = true,
-        crossinline action: () -> Unit
-    ) {
-        binding.root.visibility = if(isRootInvisible) View.INVISIBLE else View.VISIBLE
-        viewStateHandler?.run {
-            flErrorStateHandler.visible()
-            flProgressStateHandler.gone()
-            txtErrorViewStateHandler.text = errorText
-            btnUpdateViewStateHandler.setOnClickListener {
-                action.invoke()
-            }
-        }
-    }
-
-    protected fun setSuccess() {
-        binding.root.visible()
-        viewStateHandler?.run {
-            flErrorStateHandler.gone()
-            flProgressStateHandler.gone()
-        }
-    }
-
-    protected fun setLoading() {
-        binding.root.invisible()
-        viewStateHandler?.run {
-            flErrorStateHandler.gone()
-            flProgressStateHandler.visible()
         }
     }
 

@@ -12,8 +12,6 @@ import coil.load
 import coil.size.Scale
 import com.google.android.material.internal.CheckableImageButton
 import com.skydoves.balloon.balloon
-import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentRegisterBinding
 import com.spravochnic.scbguide.ui.auth.recovery_service.RecoverServiceFragment
@@ -81,20 +79,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     }
 
     override fun setObservable() = with(viewModel) {
-        registerState.observe(viewLifecycleOwner) { uiState ->
-            binding.btnRegister.setUIState(uiState)
-            when(uiState) {
-                is UIState.UIError -> showSnackBar(uiState.errorMessage, binding.root)
-                is UIState.UISuccess -> {
-                    setFragmentResult(
-                        MESSAGE, bundleOf(
-                            MESSAGE to uiState.data)
-                    )
-                    onBackPressed()
-                }
-                else -> Unit
-            }
-        }
 
         avatarFlow.observe(viewLifecycleOwner) { avatar ->
             if (avatar != Uri.EMPTY) {

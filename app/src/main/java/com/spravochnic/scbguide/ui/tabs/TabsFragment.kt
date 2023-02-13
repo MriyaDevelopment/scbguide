@@ -32,9 +32,6 @@ class TabsFragment : BaseFragment<FragmentTabsBinding>(FragmentTabsBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBottomNavigation()
-        binding.bnvTabsContainer.doOnLayout {
-            navViewModel.heightBnvTab = it.height+10.dp.toInt()
-        }
     }
 
     private fun initBottomNavigation() = with(binding) {

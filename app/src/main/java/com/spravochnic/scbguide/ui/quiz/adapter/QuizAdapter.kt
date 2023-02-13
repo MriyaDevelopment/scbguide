@@ -6,6 +6,7 @@ import javax.inject.Inject
 
 class QuizAdapter @Inject constructor(): BaseListAdapter<QuizAdapter.ItemQuiz>() {
     override fun build() {
+
     }
 
     sealed class ItemQuiz {

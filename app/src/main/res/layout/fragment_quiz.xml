@@ -18,8 +18,8 @@
             android:elevation="0dp"
             app:title="@string/quiz_sub_title"
             android:fitsSystemWindows="true"
-            app:collapsedTitleTextColor="@color/system_neutral_01"
-            app:expandedTitleTextColor="@color/system_blue_03"
+            app:expandedTitleGravity="center"
+            app:titleEnabled="false"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:titleCollapseMode="scale">
