@@ -3,7 +3,6 @@ package com.spravochnic.scbguide.ui.auth.login
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.base.ui.fragments.BaseFragment
 import com.spravochnic.scbguide.databinding.FragmentLoginBinding
 import com.spravochnic.scbguide.ui.auth.register.RegisterFragment
@@ -48,12 +47,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             binding.btnLogin.isEnabled = it
         }
 
-        loginState.observe(viewLifecycleOwner) { uiState ->
-            binding.btnLogin.setUIState(uiState)
-            when (uiState) {
-                is UIState.UIError -> showSnackBar(uiState.errorMessage, binding.root)
-                else -> Unit
-            }
-        }
+
     }
 }

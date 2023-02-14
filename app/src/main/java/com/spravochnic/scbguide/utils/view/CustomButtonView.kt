@@ -14,7 +14,6 @@ import androidx.core.animation.doOnStart
 import androidx.core.os.bundleOf
 import androidx.core.view.doOnLayout
 import com.spravochnic.scbguide.R
-import com.spravochnic.scbguide.base.network.UIState
 import com.spravochnic.scbguide.databinding.ViewCustomButtonBinding
 import com.spravochnic.scbguide.utils.*
 import com.spravochnic.scbguide.utils.ClickUtils.setOnThrottleClickListener
