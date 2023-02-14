@@ -6,9 +6,7 @@ import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import com.spravochnic.scbguide.databinding.ActivityMainBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val navController by lazy {
@@ -20,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         get() = _binding!!
 
     private val viewModel by viewModels<MainViewModel>()
-    private val navigationViewModel by viewModels<NavigationViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()

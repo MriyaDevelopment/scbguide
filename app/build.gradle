@@ -4,7 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
-    id 'dagger.hilt.android.plugin'
+//    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -36,11 +36,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         viewBinding true
         dataBinding true
@@ -102,8 +104,8 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+//    implementation "com.google.dagger:hilt-android:$hilt_version"
+//    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     //Material
     implementation "com.google.android.material:material:$material_version"
@@ -115,18 +117,18 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
 
     // Shimmer Effect Placeholder library by Facebook
-    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+//    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
 
     //SplashScreen
     implementation "androidx.core:core-splashscreen:$splash_version"
 
     //Balloon
-    implementation "com.github.skydoves:balloon:$balloon_version"
+//    implementation "com.github.skydoves:balloon:$balloon_version"
 
     //firebase
-    implementation platform('com.google.firebase:firebase-bom:30.3.2')
-    implementation "com.google.firebase:firebase-messaging-ktx:$fcm_version"
-    implementation "com.google.firebase:firebase-messaging-directboot:$fcm_version"
+//    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+//    implementation "com.google.firebase:firebase-messaging-ktx:$fcm_version"
+//    implementation "com.google.firebase:firebase-messaging-directboot:$fcm_version"
 
     //noinspection GradleDependency
     implementation 'androidx.core:core-ktx:1.8.0'

@@ -1,10 +1,19 @@
 package com.spravochnic.scbguide
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 
-@HiltAndroidApp
 class App : Application() {
 
+    override fun onCreate() {
+        super.onCreate()
+        reference = this
+    }
 
+    companion object {
+        private var reference: App? = null
+
+        fun getInstance(): App {
+            return reference ?: throw IllegalStateException("App is not initialized.")
+        }
+    }
 }

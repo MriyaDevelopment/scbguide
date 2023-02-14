@@ -7,27 +7,4 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="statusBarColor">#FEFAEE</color>
-
-    <!-- ShimmerColors -->
-    <color name="backgroundDefaultShimmer">#f6f3f9</color>
-    <color name="shimmer">#ffffff</color>
-    <!-- /ShimmerColors -->
-
-    <color name="system_orange_01">#FD7050</color>
-
-    <color name="system_red_01">#E5473F</color>
-
-    <color name="system_blue_01">#6689E5</color>
-    <color name="system_blue_02">#B2B7E4</color>
-    <color name="system_blue_03">#171E33</color>
-    <color name="system_blue_04">#283665</color>
-
-    <color name="system_neutral_01">#64748B</color>
-    <color name="system_grey_01">#FBFBFB</color>
-    <color name="system_grey_02">#BFC2D7</color>
-
-    <color name="system_background">#FEFAEE</color>
-
-    <color name="transparent">#00000000</color>
 </resources>

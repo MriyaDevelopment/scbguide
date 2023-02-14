@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomButtonView">
-        <attr name="buttonType" format="enum">
-            <enum name="blue" value="0" />
-            <enum name="red" value="1" />
-            <enum name="outline_red" value="2" />
-        </attr>
 
-        <attr name="android:text" format="string" localization="suggested" />
-        <attr name="android:enabled" format="boolean" />
-    </declare-styleable>
 </resources>
