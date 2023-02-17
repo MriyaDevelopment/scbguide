@@ -26,7 +26,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
 
         btnLogin.setOnThrottleClickListener {
-            viewModel.onClickLogin()
+            if(viewModel.onClickLogin())
+                navigationController.navigateSafe(LoginFragmentDirections.actionLoginFragmentToBaseFragment())
         }
 
         btnRecoveryLogin.setOnClickListener {
