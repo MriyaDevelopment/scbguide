@@ -13,9 +13,9 @@ import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class MainActivity : AppCompatActivity() {
 
-//    private val navController by lazy {
-//        (supportFragmentManager.findFragmentById(R.id.fgMainContainer) as NavHostFragment).navController
-//    }
+    private val navController by lazy {
+        (supportFragmentManager.findFragmentById(R.id.fgMainContainer) as NavHostFragment).navController
+    }
 
     private var _binding: ActivityMainBinding? = null
     private val binding
@@ -29,30 +29,4 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-}
-
-fun main() {
-
-    val runnable = Runnable {
-        run {
-            try {
-                println(Thread.currentThread().name)
-                Thread.sleep(2000)
-                for (i in 0 until 5) {
-                    if (i == 2) {
-                        Thread.interrupted()
-                    }
-                }
-            } catch (e: InterruptedException) {
-
-            }
-        }
-    }
-
-    val thread = Thread(runnable).apply {
-        name = "First"
-    }
-    thread.start()
-
-    println("Method finish")
 }
