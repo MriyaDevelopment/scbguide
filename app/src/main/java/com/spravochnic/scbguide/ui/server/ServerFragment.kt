@@ -1,30 +1,27 @@
-package com.spravochnic.scbguide.ui.lecture
+package com.spravochnic.scbguide.ui.server
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.text.isDigitsOnly
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
-import com.spravochnic.scbguide.App
+import androidx.lifecycle.lifecycleScope
 import com.spravochnic.scbguide.databinding.FragmentLectureBinding
+import com.spravochnic.scbguide.databinding.FragmentServerBinding
+import com.spravochnic.scbguide.ui.lecture.LectureViewModel
 import com.spravochnic.scbguide.ui.lecture.adapter.LecturyAdapter
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LectureFragment: Fragment() {
+class ServerFragment : Fragment() {
 
     private var _binding: FragmentLectureBinding? = null
     private val binding
         get() = _binding!!
 
-    private val viewModel by viewModels<LectureViewModel>()
+    private val viewModel by viewModels<ServerViewModel>()
     private val adapter = LecturyAdapter()
 
     override fun onCreateView(
@@ -38,33 +35,18 @@ class LectureFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setAdapters()
-        setListeners()
-        setObservable()
-    }
-
-    private fun setAdapters() {
         binding.rvLecture.adapter = adapter
-    }
-
-    //Отдаем с view (fragment)
-    private fun setListeners() = with(binding) {
-        adapter.setClickLectureActionListener {
-            Log.d("LECTURE_CLICK_ITEM", "name $it")
+        viewModel.results.observe(viewLifecycleOwner) {
+            adapter.submitList(
+                it.map { result ->
+                    LectureViewModel.Lecture(
+                        id = result.id,
+                        name = result.name
+                    )
+                }
+            )
         }
     }
 
-    //Принимаем с viewModel
-    private fun setObservable() = with(viewModel) {
-        viewModelScope.launch {
-            lecturesState.collect {
-                adapter.submitList(it)
-            }
-        }
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
