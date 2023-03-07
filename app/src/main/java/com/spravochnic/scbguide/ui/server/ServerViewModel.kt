@@ -25,7 +25,7 @@ class ServerViewModel: ViewModel() {
                 val response = ApiService.API.getCharacter(1)
                 if (response.isSuccessful) {
                     results.value = response.body()?.results
-                    
+
                 } else {
 
                 }

@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.spravochnic.scbguide.R
 import com.spravochnic.scbguide.databinding.ItemLectureBinding
 import com.spravochnic.scbguide.ui.lecture.LectureViewModel
 
@@ -31,7 +33,9 @@ class LecturyAdapter :
 
         fun bind(item: LectureViewModel.Lecture, lectureOnClickActionListener: ((String) -> Unit)?) {
             binding.nameLecture.text = item.name
-
+            binding.imageLecture.load(item.image) {
+                placeholder(R.drawable.ic_launcher_background)
+            }
             binding.root.setOnClickListener {
                 lectureOnClickActionListener?.invoke(item.name)
             }

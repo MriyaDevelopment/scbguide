@@ -41,7 +41,8 @@ class ServerFragment : Fragment() {
                 it.map { result ->
                     LectureViewModel.Lecture(
                         id = result.id,
-                        name = result.name
+                        name = result.name,
+                        image = result.image
                     )
                 }
             )
