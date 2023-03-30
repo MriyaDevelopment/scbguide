@@ -36,7 +36,9 @@ class ServerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvLecture.adapter = adapter
+
         viewModel.results.observe(viewLifecycleOwner) {
+
             adapter.submitList(
                 it.map { result ->
                     LectureViewModel.Lecture(
@@ -46,6 +48,7 @@ class ServerFragment : Fragment() {
                     )
                 }
             )
+
         }
     }
 

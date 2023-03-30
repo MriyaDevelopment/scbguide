@@ -24,7 +24,10 @@ class ServerViewModel: ViewModel() {
             try {
                 val response = ApiService.API.getCharacter(1)
                 if (response.isSuccessful) {
-                    results.value = response.body()?.results
+                    val list = results.value
+                    response.body()?.results?.let {
+                        results.value = list?.plus(it)
+                    }
 
                 } else {
 
