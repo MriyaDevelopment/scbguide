@@ -12,13 +12,15 @@ class LectureViewHolder(
     private val binding: ItemLectureBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: LectureViewModel.Lecture, lectureOnClickActionListener: ((String) -> Unit)?) {
-        binding.nameLecture.text = item.name
-        binding.imageLecture.load(item.image) {
-            placeholder(R.drawable.ic_launcher_background)
+    fun bind(item: LectureViewModel.Lecture, lectureOnClickActionListener: ((Int) -> Unit)?) {
+        if (item.check) {
+            binding.root.setStrokeColor(binding.root.context.getColorStateList(R.color.teal_200))
+        } else {
+            binding.root.setStrokeColor(binding.root.context.getColorStateList(R.color.white))
         }
+        binding.nameLecture.text = item.name
         binding.root.setOnClickListener {
-            lectureOnClickActionListener?.invoke(item.name)
+            lectureOnClickActionListener?.invoke(item.id)
         }
     }
 

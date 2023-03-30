@@ -10,9 +10,9 @@ import com.spravochnic.scbguide.ui.lecture.adapter.holder.LectureViewHolder
 class LecturyAdapter :
     ListAdapter<LectureViewModel.Lecture, LectureViewHolder>(LectureDiffUtilCallback()) {
 
-    private var lectureOnClickActionListener: ((String) -> Unit)? = null
+    private var lectureOnClickActionListener: ((Int) -> Unit)? = null
 
-    fun setClickLectureActionListener(action: (String) -> Unit) {
+    fun setClickLectureActionListener(action: (Int) -> Unit) {
         lectureOnClickActionListener = action
     }
 

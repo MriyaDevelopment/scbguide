@@ -22,7 +22,7 @@ class LectureViewModel: ViewModel() {
         val list = mutableListOf<Lecture>()
 
         repeat(20) {
-            list.add(Lecture(it, "$it name", ""))
+
         }
 
         _lecturesState.value = list
@@ -31,9 +31,6 @@ class LectureViewModel: ViewModel() {
     data class Lecture(
         val id: Int,
         val name: String,
-        val image: String,
+        val check: Boolean = false
     )
-
-
-
 }

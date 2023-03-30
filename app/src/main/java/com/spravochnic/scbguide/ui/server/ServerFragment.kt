@@ -37,18 +37,20 @@ class ServerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvLecture.adapter = adapter
 
+        binding.add.setOnClickListener {
+            viewModel.addElement()
+        }
+
+        binding.remove.setOnClickListener {
+            viewModel.removeIndex()
+        }
+
+        adapter.setClickLectureActionListener {
+            viewModel.checkElement(it)
+        }
+
         viewModel.results.observe(viewLifecycleOwner) {
-
-            adapter.submitList(
-                it.map { result ->
-                    LectureViewModel.Lecture(
-                        id = result.id,
-                        name = result.name,
-                        image = result.image
-                    )
-                }
-            )
-
+            adapter.submitList(it)
         }
     }
 

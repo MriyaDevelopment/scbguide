@@ -7,37 +7,45 @@ import androidx.lifecycle.viewModelScope
 import com.spravochnic.scbguide.App
 import com.spravochnic.scbguide.ui.api.ApiService
 import com.spravochnic.scbguide.ui.api.models.CharacterResponse
+import com.spravochnic.scbguide.ui.lecture.LectureViewModel
 import kotlinx.coroutines.launch
 
 class ServerViewModel: ViewModel() {
 
-    val results: MutableLiveData<List<CharacterResponse.Result>> by lazy {
-        MutableLiveData<List<CharacterResponse.Result>>()
+    val results: MutableLiveData<List<LectureViewModel.Lecture>> by lazy {
+        MutableLiveData<List<LectureViewModel.Lecture>>()
     }
+
+    private var checkId: Int? = null
 
     init {
         getCharacter()
     }
 
-    fun getCharacter(page: Int = 1) {
-        viewModelScope.launch {
-            try {
-                val response = ApiService.API.getCharacter(1)
-                if (response.isSuccessful) {
-                    val list = results.value
-                    response.body()?.results?.let {
-                        results.value = list?.plus(it)
-                    }
-
-                } else {
-
-                }
-
-            } catch (e: Exception) {
-
-            }
+    fun getCharacter() {
+        val list = mutableListOf<LectureViewModel.Lecture>()
+        repeat(20) {
+            list.add(LectureViewModel.Lecture(it, "Name ${it}"))
         }
+        results.value = list
+    }
 
+    fun removeIndex() {
+        results.value = results.value?.toMutableList()?.apply {
+            val result = indexOfFirst { it.id == checkId }
+            removeAt(result)
+        }
+    }
 
+    fun addElement() {
+        results.value = results.value?.toMutableList()?.apply {
+            val result = firstOrNull {it.id == checkId} ?: LectureViewModel.Lecture(0, "12323132")
+            add(result)
+        }
+    }
+
+    fun checkElement(id: Int) {
+        results.value = results.value?.map { it.copy(check = it.id == id) }
+        checkId = id
     }
 }
